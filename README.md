@@ -14,14 +14,14 @@ The system does not count promises, dashboard balances, test credits, self-trans
 
 ## v1.1 target
 
-AEC v1.1 targets evidence-backed 100/100 in three technical domains plus one real-world finality proof:
+AEC v1.1 uses evidence-backed acceptance rather than subjective readiness scores:
 
-1. **Architecture / Governance — 100/100 by acceptance evidence.**
-2. **Orchestrator + Worker Runtime — 100/100 by exact-main CI/runtime evidence.**
-3. **Persistent 7/24 unattended execution — 100/100 by durable-state and 24-cycle evidence.**
-4. **Economic Finality Proof — at least €0.01 Verified Banked Net Value from an independent external counterparty.**
+1. **Architecture / Governance — 100/100 only when every canonical gate has PASS evidence.**
+2. **Orchestrator + Worker Runtime — 100/100 only with exact-main CI and controlled end-to-end runtime evidence.**
+3. **Persistent 7/24 unattended execution — 100/100 only with deployed durable state, cross-invocation persistence, recovery proof and 24 consecutive hourly PASS cycles.**
+4. **Economic Finality Proof — PASS only with at least €0.01 Verified Banked Net Value from an independent external counterparty.**
 
-See `docs/V1_1_ACCEPTANCE.md`.
+`aec/v11_acceptance.py` is the machine-readable technical score contract. `docs/V1_1_ACCEPTANCE.md` is the canonical acceptance specification.
 
 ## €0 capital rule
 
@@ -45,7 +45,7 @@ AEC tracks 20 independent revenue doors spanning agent-native bounties, open-sou
 
 ## AEC 24/7 Orchestrator™
 
-The device-independent scheduler runs hourly and isolates source failures. Initial live discovery adapters cover Taskmarket, Superteam, TaskBounty, GitHub public bounty issues and Owned Assets.
+The device-independent scheduler runs hourly and isolates source failures. Initial discovery adapters cover Taskmarket, Superteam, TaskBounty, GitHub public bounty issues and Owned Assets.
 
 Discovery remains evidence, not execution permission.
 
@@ -61,20 +61,42 @@ First execution workers:
 2. **QA / DoneCheck Worker** — measurable acceptance verification.
 3. **Settlement Collector** — independent-counterparty settlement, cost and VNEV evidence; bank finality remains separate.
 
+The remote runtime reuses these workers against the durable queue. Worker or durable post-processing failures are converted into bounded retry evidence instead of silently leaving a job successful.
+
 ## AEC Durable State Core™ v1.1
 
-v1.1 adds the control-plane primitives required for safe unattended operation:
+The Cloudflare Worker + D1 reference backend now represents the full durable job lifecycle required for commissioning:
 
+- authenticated QUALIFIED-only durable enqueue;
 - idempotency keys to suppress duplicate economic actions;
 - exclusive expiring leases for multi-worker coordination;
-- worker heartbeats and stalled-worker detection;
-- dead-letter capture for terminal failures;
-- tamper-evident SHA-256 hash-chain audit events;
-- authenticated HTTPS remote-state client;
-- reference zero-capital Cloudflare Worker + D1 durable-state gateway and schema;
-- hourly durable-state health/audit probe whose evidence is uploaded with the orchestrator artifacts.
+- capability-scoped job leasing, assignment, start, verification and finish;
+- Human Threshold HOLD/release carrying authority evidence;
+- worker heartbeats and stale-worker detection;
+- watchdog recovery of missing/expired worker leases;
+- bounded retries and terminal dead-letter capture;
+- SHA-256 checked small-artifact round-trip for controlled one-file work products;
+- tamper-evident linear hash-chain audit and verification;
+- durable scheduler-cycle history for the v1.1 24-hour gate;
+- Cloudflare cron watchdog independent of the user's device and GitHub runner lifetime.
 
-SQLite remains the local/reference backend. GitHub-hosted runners remain ephemeral compute. Remote durable state must be deployed and observed before persistent 7/24 PASS is claimed.
+`aec/remote_state.py` is the authenticated HTTPS client. `aec/remote_worker_runtime.py` executes the existing workers against the durable queue.
+
+The hourly GitHub workflow automatically performs:
+
+`DISCOVERY → DURABLE HEALTH/AUDIT → CROSS-RUN CANARY → CONTROLLED QUALIFIED EXECUTION CANARY → REMOTE WORKERS → DURABLE CYCLE RECORD`
+
+The controlled acceptance canary is deliberately non-economic. It proves queue → Production → durable artifact → QA/DoneCheck → evidence without pretending to prove revenue.
+
+SQLite remains the local/reference backend. GitHub-hosted runners remain ephemeral compute. D1 deployment and observation are required before persistent 7/24 PASS is claimed.
+
+## Cloud commissioning package
+
+Repository-side deployment is encoded in `.github/workflows/deploy-cloudflare.yml` and `deploy/cloudflare/`.
+
+No Cloudflare credential, runtime bearer token, wallet key, seed phrase or banking data is committed. Account-bound secrets remain Human Threshold commissioning inputs.
+
+See `docs/V1_1_DURABLE_RUNTIME.md`.
 
 ## Economic Finality Core™ v1.1
 
@@ -110,10 +132,16 @@ Core modules include:
 - `aec/worker_runtime.py` — queue, registry, capability matching, bounded retry and evidence;
 - `aec/execution_pipeline.py` — QUALIFIED evidence → execution bridge;
 - `aec/execution_workers.py` — Production, QA/DoneCheck and Settlement Collector;
-- `aec/runtime_control.py` — idempotency, leases, heartbeat, dead-letter and hash-chain audit;
-- `aec/remote_state.py` — authenticated HTTPS durable-state client;
+- `aec/runtime_control.py` — local/reference idempotency, leases, heartbeat, dead-letter and hash-chain audit;
+- `aec/remote_state.py` — authenticated durable job/artifact/control client;
+- `aec/remote_worker_runtime.py` — durable execution runner;
+- `aec/v11_acceptance.py` — evidence-driven 100/100 technical scoring;
 - `aec/economic_finality.py` — banked-economic-finality judgment;
-- `deploy/cloudflare/` — reference Worker + D1 state gateway.
+- `deploy/cloudflare/` — Worker + D1 durable-state gateway, schema and cron template;
+- `scripts/durable_canary.py` — cross-invocation state survival proof;
+- `scripts/seed_v1_1_acceptance_canary.py` — controlled QUALIFIED production/QA proof seed;
+- `scripts/record_runtime_cycle.py` — durable 24-cycle observation ledger;
+- `scripts/verify_cloudflare_bundle.py` — deployment-bundle CI gate.
 
 ## Open-core boundary
 
@@ -123,7 +151,7 @@ Private operational data: credentials, private keys, seed phrases, live account 
 
 ## Status
 
-**STATE — HOLD — v1.1 OBSERVATION / REAL-WORLD FINALITY**  
-**CLAIM —** The v1.1 technical infrastructure required to pursue 100/100 is now represented in main: durable coordination primitives, remote durable-state gateway/client, supervisor controls, Economic Finality Core, hourly durable-state probe, Worker Runtime and 20-door Revenue Mesh.  
-**EVIDENCE —** Unit tests cover the existing Worker Runtime plus v1.1 idempotency, exclusive leases, hash-chain audit, dead-lettering and economic-finality judgments. Exact-main CI, deployed remote-state health, 24 consecutive hourly cycles, cross-run queue persistence and one real banked external economic run remain required before the corresponding PASS judgments can be issued.  
-**NEXT ACTION —** Verify exact-main CI; deploy/configure the zero-capital durable-state backend and GitHub secrets; observe durable hourly cycles; then execute The One Cent Test™ together and reconcile the first real bank receipt.
+**STATE — HOLD — HUMAN COMMISSIONING + OBSERVATION + REAL-WORLD FINALITY**  
+**CLAIM —** The repository-side v1.1 commissioning package is implemented: evidence-driven scoring, full durable job lifecycle, D1 schema, authenticated gateway/client, remote worker execution, controlled production→QA canary, cross-invocation canary, watchdog/recovery, durable cycle history, Cloudflare deployment workflow and Economic Finality Core are represented in main.  
+**EVIDENCE —** CI definitions now test Python 3.11/3.12, compile all Python runtime code, validate the D1 schema/gateway contract and syntax-check the Cloudflare Worker. Exact-main CI still needs an observable successful run. Cloud deployment, cross-invocation survival, 24 consecutive hourly cycles and a real banked external economic run are external evidence gates and therefore remain HOLD.  
+**NEXT ACTION —** Human Threshold commissioning only: authorize the Cloudflare account, create/select the zero-cost D1 database and store scoped credentials/secrets without exposing them in chat. Then dispatch the prepared deployment workflow. From that point the system automatically collects the controlled execution, persistence and 24-cycle evidence. After technical evidence closes, execute The One Cent Test™ together and reconcile the first real bank receipt.
