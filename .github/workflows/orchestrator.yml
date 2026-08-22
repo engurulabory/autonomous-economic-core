@@ -15,7 +15,7 @@ concurrency:
 jobs:
   discover-and-run-workers:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 15
     env:
       AEC_STATE_URL: ${{ secrets.AEC_STATE_URL }}
       AEC_STATE_TOKEN: ${{ secrets.AEC_STATE_TOKEN }}
@@ -24,12 +24,25 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+
       - name: Run read-only revenue mesh cycle
         run: python scripts/run_orchestrator.py
-      - name: Boot AEC Worker Runtime v0.1
+
+      - name: Boot local reference Worker Runtime
         run: python scripts/run_workers.py
+
       - name: Probe AEC Durable State Core v1.1
         run: python scripts/probe_durable_state.py
+
+      - name: Verify cross-invocation durable canary
+        run: python scripts/durable_canary.py
+
+      - name: Run workers against durable queue
+        run: python scripts/run_remote_workers.py
+
+      - name: Record durable scheduler cycle
+        run: python scripts/record_runtime_cycle.py
+
       - name: Upload cycle evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -39,5 +52,8 @@ jobs:
             runtime/orchestrator-latest.json
             runtime/worker-runtime-latest.json
             runtime/durable-state-latest.json
+            runtime/durability-canary-latest.json
+            runtime/remote-worker-latest.json
+            runtime/v1_1-cycle-latest.json
           if-no-files-found: error
           retention-days: 14
