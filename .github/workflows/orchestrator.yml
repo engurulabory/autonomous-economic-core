@@ -37,6 +37,9 @@ jobs:
       - name: Verify cross-invocation durable canary
         run: python scripts/durable_canary.py
 
+      - name: Seed controlled QUALIFIED execution canary
+        run: python scripts/seed_v1_1_acceptance_canary.py
+
       - name: Run workers against durable queue
         run: python scripts/run_remote_workers.py
 
@@ -53,6 +56,7 @@ jobs:
             runtime/worker-runtime-latest.json
             runtime/durable-state-latest.json
             runtime/durability-canary-latest.json
+            runtime/v1_1-acceptance-canary-latest.json
             runtime/remote-worker-latest.json
             runtime/v1_1-cycle-latest.json
           if-no-files-found: error
