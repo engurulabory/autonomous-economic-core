@@ -1,14 +1,19 @@
 from __future__ import annotations
 
 import json
+import sys
 from dataclasses import asdict
 from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents[1]
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from aec.door_adapters import FIRST_FIVE_ADAPTERS
 from aec.orchestrator import run_cycle
 
 
-OUTPUT = Path("runtime/orchestrator-latest.json")
+OUTPUT = ROOT / "runtime/orchestrator-latest.json"
 
 
 def _jsonable(value):
