@@ -72,19 +72,33 @@ class RemoteWorkerRunner:
             outcome = WorkerOutcome(
                 next_state=JobState.RETRY_WAIT,
                 reason=f"{type(exc).__name__}: {exc}",
-                evidence={"exception_type": type(exc).__name__},
+                evidence={"exception_type": type(exc).__name__, "phase": "worker_execution"},
             )
 
         artifact_id: str | None = None
         chained_job_id: str | None = None
         evidence = dict(outcome.evidence)
-        if outcome.next_state is JobState.COMPLETED and "produce_artifact" in worker.spec.capabilities:
-            artifact_id = self._persist_production_artifact(job_id, evidence)
-            if artifact_id:
-                evidence["remote_artifact_id"] = artifact_id
-                chained_job_id = self._enqueue_next_verify(leased.job, artifact_id, evidence)
-                if chained_job_id:
-                    evidence["chained_verify_job_id"] = chained_job_id
+        try:
+            if outcome.next_state is JobState.COMPLETED and "produce_artifact" in worker.spec.capabilities:
+                artifact_id = self._persist_production_artifact(job_id, evidence)
+                if artifact_id:
+                    evidence["remote_artifact_id"] = artifact_id
+                    chained_job_id = self._enqueue_next_verify(leased.job, artifact_id, evidence)
+                    if chained_job_id:
+                        evidence["chained_verify_job_id"] = chained_job_id
+        except Exception as exc:
+            outcome = WorkerOutcome(
+                next_state=JobState.RETRY_WAIT,
+                reason=f"post-processing failed: {type(exc).__name__}: {exc}",
+                evidence={
+                    **evidence,
+                    "exception_type": type(exc).__name__,
+                    "phase": "durable_post_processing",
+                    "artifact_id": artifact_id,
+                },
+            )
+            evidence = dict(outcome.evidence)
+            chained_job_id = None
 
         final_state = self.client.finish_job(
             leased,
