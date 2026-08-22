@@ -41,7 +41,7 @@ class EconomicTruthTests(unittest.TestCase):
         self.assertEqual(result.one_cent_economic_test, Judgment.PASS)
         self.assertEqual(result.one_cent_bank_test, Judgment.PASS)
 
-    def test_no_external_counterparty_blocks_fake_economy(self):
+    def test_no_external_counterparty_blocks_and_zeroes_fake_economy(self):
         run = EconomicRun(
             run_id="self-transfer",
             external_counterparty=False,
@@ -55,6 +55,9 @@ class EconomicTruthTests(unittest.TestCase):
             bank_received_eur=Decimal("100"),
         )
         result = evaluate_run(run)
+        self.assertEqual(result.vnev_eur, Decimal("0.0000"))
+        self.assertEqual(result.vbnv_eur, Decimal("0.0000"))
+        self.assertEqual(result.net_per_hour_eur, Decimal("0.0000"))
         self.assertEqual(result.one_cent_economic_test, Judgment.BLOCKED)
         self.assertEqual(result.one_cent_bank_test, Judgment.BLOCKED)
 
