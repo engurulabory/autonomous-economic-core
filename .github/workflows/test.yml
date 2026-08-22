@@ -23,3 +23,15 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Compile core, connectors, tests and scripts
         run: python -m compileall -q aec connectors tests scripts
+      - name: Verify Cloudflare D1 schema and gateway contract
+        run: python scripts/verify_cloudflare_bundle.py
+
+  cloudflare-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Syntax-check zero-dependency Cloudflare Worker
+        run: node --check deploy/cloudflare/worker.js
