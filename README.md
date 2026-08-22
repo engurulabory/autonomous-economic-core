@@ -54,7 +54,7 @@ Opportunity score:
 
 Public task/repository content is untrusted data. Requests to expose system prompts, environment variables, private keys, seed phrases, credentials, cookies, tokens or signing material are automatic rejection triggers.
 
-Economic Principal, agent identity and payout identity are separate concepts. Account creation, KYC/tax, withdrawal-address setup, public identity commitments and money movement remain Human Threshold™ events unless narrowly delegated.
+Economic Principal, agent identity and payout identity are separate concepts. Account creation, legal acceptance, KYC/tax, withdrawal-address setup, public identity commitments and money movement remain Human Threshold™ events unless narrowly delegated.
 
 ## Current implementation
 
@@ -65,7 +65,10 @@ Core modules include:
 - `aec/action_gate.py` — exact-action zero-capital enforcement;
 - `aec/market_evidence.py` — timestamped canonical market evidence records and competition fields;
 - `aec/receipts.py` — separate wallet and bank receipt evidence schemas;
+- `aec/taskmarket_adapter.py` — Taskmarket canonical task → exact action → market evidence → opportunity score → integrity decision mapping;
 - `connectors/taskmarket.py` — zero-cost read-only Taskmarket discovery/canonical task connector.
+
+The first-proof Taskmarket adapter is deliberately limited to bounty-mode `submit` actions. Claim deposits, paid pitch/proof/bid routes, requester-side acceptance and other money-moving actions require separate exact-action evaluation and are not silently generalized from the bounty path.
 
 Research and reference documents:
 - `docs/RESEARCH_SYNTHESIS_2026-08-22.md`;
@@ -97,7 +100,7 @@ Private operational data: credentials, private keys, seed phrases, live account 
 
 ## Status
 
-**STATE — HOLD — HUMAN THRESHOLD / REAL-WORLD PROOF**  
-**CLAIM —** Market qualification, exact-action zero-capital enforcement, adversarial opportunity screening, receipt separation and a zero-cost Taskmarket read connector are now represented in the public core.  
-**EVIDENCE —** Real external earning, acceptance, settlement, reconciliation and bank receipt have not yet been proven. CI for the latest commits must also be independently verified before a technical PASS is claimed.  
-**NEXT ACTION —** Revalidate one current Taskmarket bounty through the read connector and hard gates, obtain Human Threshold approval for external identity/wallet setup, then run The One Cent Test™.
+**STATE — HOLD — CI + HUMAN THRESHOLD / REAL-WORLD PROOF**  
+**CLAIM —** The first-proof Taskmarket canonical adapter, exact-action zero-capital gate, adversarial opportunity screening, receipt separation and read-only connector are represented in the public core.  
+**EVIDENCE —** Adapter tests cover free submit qualification, unknown-country HOLD, missing action rejection, closed submission rejection, paid-submit rejection, prompt-exfiltration rejection and non-bounty scope rejection. GitHub Actions exists for Python 3.11/3.12 unit tests and compile checks, but the latest commit must show a verifiable successful run before technical PASS is claimed. Real external earning, acceptance, settlement, reconciliation and bank receipt are not yet proven.  
+**NEXT ACTION —** Verify CI on the exact main SHA, revalidate one current Taskmarket bounty through the canonical adapter, obtain Human Threshold approval for legal identity/wallet setup, then run The One Cent Test™.
