@@ -1,0 +1,14 @@
+name = "aec-durable-state"
+main = "worker.js"
+compatibility_date = "2026-08-22"
+
+[triggers]
+crons = ["*/15 * * * *"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "aec-durable-state"
+database_id = "0c236f13-61ac-49dd-af45-743e1d6aaec1"
+
+# AEC_STATE_TOKEN must be configured as a Cloudflare Worker secret.
+# Never commit tokens, API credentials, wallet keys, or banking data.
