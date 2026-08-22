@@ -4,8 +4,6 @@ from dataclasses import dataclass
 from decimal import Decimal, ROUND_HALF_UP
 from enum import Enum
 
-MONEY = Decimal("0.01")
-
 
 class Judgment(str, Enum):
     PASS = "PASS"
@@ -35,8 +33,7 @@ class EconomicRun:
             "active_minutes",
             "bank_received_eur",
         ):
-            value = getattr(self, field_name)
-            if value < 0:
+            if getattr(self, field_name) < 0:
                 raise ValueError(f"{field_name} cannot be negative")
 
 
@@ -54,38 +51,36 @@ def _money(value: Decimal) -> Decimal:
 
 
 def evaluate_run(run: EconomicRun) -> EconomicResult:
-    """Evaluate evidence-backed economic truth for one run.
+    """Return only recognized evidence-backed economic value.
 
-    A positive calculation cannot become PASS unless the external counterparty,
-    acceptance, settlement reconciliation and cost finalization evidence exist.
-    Banked proof additionally requires verified bank receipt evidence.
+    If the external-counterparty gate fails, recognized VNEV/VBNV and hourly
+    value are forced to zero so blocked fake-economy events cannot contaminate
+    dashboards, thresholds, or learning data.
     """
+
+    if not run.external_counterparty:
+        return EconomicResult(
+            vnev_eur=Decimal("0.0000"),
+            vbnv_eur=Decimal("0.0000"),
+            net_per_hour_eur=Decimal("0.0000"),
+            one_cent_economic_test=Judgment.BLOCKED,
+            one_cent_bank_test=Judgment.BLOCKED,
+        )
 
     vnev = _money(run.settled_revenue_eur - run.direct_cost_eur)
     banked_base = run.bank_received_eur - run.direct_cost_eur
     vbnv = _money(banked_base) if run.bank_receipt_verified else Decimal("0.0000")
 
-    evidence_complete = (
-        run.external_counterparty
-        and run.accepted
-        and run.reconciled
-        and run.costs_finalized
-    )
+    evidence_complete = run.accepted and run.reconciled and run.costs_finalized
 
-    if not run.external_counterparty:
-        economic_judgment = Judgment.BLOCKED
-    elif not evidence_complete:
+    if not evidence_complete:
         economic_judgment = Judgment.HOLD
     elif vnev >= Decimal("0.01"):
         economic_judgment = Judgment.PASS
     else:
         economic_judgment = Judgment.HOLD
 
-    if economic_judgment is Judgment.BLOCKED:
-        bank_judgment = Judgment.BLOCKED
-    elif not run.bank_receipt_verified:
-        bank_judgment = Judgment.HOLD
-    elif not evidence_complete:
+    if not run.bank_receipt_verified or not evidence_complete:
         bank_judgment = Judgment.HOLD
     elif vbnv >= Decimal("0.01"):
         bank_judgment = Judgment.PASS
