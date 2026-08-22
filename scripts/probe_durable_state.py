@@ -24,9 +24,20 @@ def main() -> int:
     try:
         client = RemoteStateClient(base_url, token)
         health = client.health()
-        client.heartbeat("github-actions-runtime", {"source": "probe"})
+        if health.get("ok") is not True or str(health.get("version")) != "1.1":
+            raise RuntimeError(f"unexpected durable-state health payload: {health}")
+        client.heartbeat("github-actions-runtime", {"source": "probe", "version": "1.1"})
         event_hash = client.append_audit("github-actions-runtime", "DURABLE_STATE_PROBE", {"health": health})
-        payload = {"state": "PASS", "health": health, "audit_event_hash": event_hash}
+        audit = client.verify_audit_chain()
+        if audit.get("ok") is not True:
+            raise RuntimeError(f"audit chain verification failed: {audit}")
+        payload = {
+            "state": "PASS",
+            "health": health,
+            "audit_event_hash": event_hash,
+            "audit": audit,
+            "job_counts": client.job_counts(),
+        }
         OUT.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
         print("AEC durable state: PASS")
         return 0
