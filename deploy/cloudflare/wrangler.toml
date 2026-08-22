@@ -1,5 +1,5 @@
 name = "aec-durable-state"
-main = "edge-runtime.js"
+main = "runtime-v1_1.js"
 compatibility_date = "2026-08-22"
 
 [triggers]
