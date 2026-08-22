@@ -40,16 +40,6 @@ Before an opportunity can execute it must pass:
 
 Any unknown critical field is HOLD. Stale, unfunded, paid-entry, policy-prohibited or credential-exfiltration opportunities are rejected.
 
-Opportunity score:
-- funding certainty 25,
-- zero-capital purity 20,
-- claimability 15,
-- acceptance clarity 15,
-- payout clarity 10,
-- agent compatibility 5,
-- task simplicity 5,
-- payout speed 5.
-
 ## 20-door Revenue Mesh™
 
 AEC™ tracks 20 independent revenue doors spanning agent-native bounties, open-source work, research, QA, data work, owned digital assets, APIs, licensing, direct B2B micro-services and recurring monitoring services.
@@ -58,25 +48,40 @@ AEC™ tracks 20 independent revenue doors spanning agent-native bounties, open-
 
 ## AEC 24/7 Orchestrator™ v0.1
 
-The first unattended runtime is now device-independent and read-only:
+The device-independent scheduler runs hourly and isolates source failures:
 
-- scheduled by GitHub Actions every hour;
-- manual dispatch supported;
-- each provider isolated so one failure does not stop the cycle;
-- cycle evidence written to `runtime/orchestrator-latest.json` and uploaded as an artifact;
-- no unattended wallet signing, legal acceptance, KYC, purchase, bid, claim, submission or money movement.
+- Taskmarket → agent-native bounties
+- Superteam → research/analysis tasks
+- TaskBounty → open-source bug bounties
+- GitHub public bounty issues → discovery
+- Owned Assets → one-file utility products
 
-First five revenue-door adapters:
+Discovery remains read-only. A discovered candidate is evidence, not execution permission.
 
-1. Taskmarket → agent-native bounties
-2. Superteam → research/analysis tasks
-3. TaskBounty → open-source bug bounties
-4. GitHub public bounty issues → bounty discovery
-5. Owned Assets → one-file utility products
+## AEC Worker Runtime™ v0.1
 
-A discovered candidate is only discovery evidence. Canonical verification and all hard gates still apply before execution.
+Qualified work now has a persistent execution path:
 
-See `docs/ORCHESTRATOR_V0_1.md`.
+`QUALIFIED EVIDENCE → JOB QUEUE → WORKER REGISTRY → CAPABILITY MATCH → ASSIGNMENT → EXECUTION → VERIFICATION → RETRY/HOLD → EVIDENCE`
+
+Runtime properties:
+
+- SQLite persistent queue + append-only job event evidence;
+- exact capability matching;
+- bounded retries with fail-closed exhaustion;
+- Human Threshold jobs enter HOLD until explicit release;
+- provider/worker exceptions become evidence-backed retry states;
+- discovery cannot enqueue execution without `QUALIFIED` state + evidence id.
+
+First three execution workers:
+
+1. **Production Worker** — controlled-workspace artifact production/materialization with SHA-256 evidence.
+2. **QA / DoneCheck Worker** — measurable file/acceptance verification.
+3. **Settlement Collector** — independent-counterparty settlement evidence, direct cost and VNEV collection; bank finality remains separate.
+
+The hourly workflow now boots the worker registry as well as discovery and uploads both runtime status artifacts. GitHub-hosted runners are ephemeral, so GitHub Actions is a scheduler/runtime probe, not yet the authoritative durable economic job-state store. Durable cloud queue state is required before unattended external writes are enabled.
+
+See `docs/ORCHESTRATOR_V0_1.md` and `docs/WORKER_RUNTIME_V0_1.md`.
 
 ## Security and authority
 
@@ -89,17 +94,17 @@ Economic Principal, agent identity and payout identity are separate concepts. Ac
 Core modules include:
 - `aec/economics.py` — VNEV/VBNV and economic thresholds;
 - `aec/shadow.py` — fail-closed shadow qualification;
-- `aec/opportunity_integrity.py` — canonical funding/claimability/policy/security gates and 100-point score;
+- `aec/opportunity_integrity.py` — canonical funding/claimability/policy/security gates;
 - `aec/action_gate.py` — exact-action zero-capital enforcement;
-- `aec/market_evidence.py` — timestamped canonical market evidence records and competition fields;
-- `aec/receipts.py` — separate wallet and bank receipt evidence schemas;
-- `aec/taskmarket_adapter.py` — Taskmarket canonical task → exact action → market evidence → opportunity score → integrity decision mapping;
-- `aec/revenue_mesh.py` — canonical 20-door revenue registry + full economic PASS;
+- `aec/market_evidence.py` — timestamped canonical market evidence;
+- `aec/receipts.py` — wallet/bank receipt separation;
+- `aec/taskmarket_adapter.py` — Taskmarket canonical mapping;
+- `aec/revenue_mesh.py` — 20-door revenue registry + full economic PASS;
 - `aec/orchestrator.py` — resilient unattended discovery cycle;
 - `aec/door_adapters.py` — first five operational revenue-door adapters;
-- `connectors/taskmarket.py`, `connectors/superteam.py`, `connectors/taskbounty.py`, `connectors/github_bounties.py`, `connectors/owned_assets.py` — read-only source adapters.
-
-The first-proof Taskmarket adapter is deliberately limited to bounty-mode `submit` actions. Claim deposits, paid pitch/proof/bid routes, requester-side acceptance and other money-moving actions require separate exact-action evaluation and are not silently generalized from the bounty path.
+- `aec/worker_runtime.py` — persistent queue, worker registry, capability matching, retry and evidence;
+- `aec/execution_pipeline.py` — QUALIFIED evidence → worker queue bridge;
+- `aec/execution_workers.py` — Production, QA/DoneCheck and Settlement Collector workers.
 
 ## Governance
 
@@ -125,7 +130,7 @@ Private operational data: credentials, private keys, seed phrases, live account 
 
 ## Status
 
-**STATE — HOLD — CI + REAL-WORLD ECONOMIC PROOF**  
-**CLAIM —** AEC 24/7 Orchestrator™ v0.1 and the first five revenue-door adapters are represented in main with hourly device-independent discovery, provider isolation, artifact evidence, exact-action zero-capital gates and bank-receipt finality preserved.  
-**EVIDENCE —** Unit tests cover orchestrator provider isolation, candidate validation and the five-adapter registry. GitHub Actions workflows exist for Python 3.11/3.12 tests/compile and the hourly read-only orchestrator. Exact-main CI and the first scheduled runtime artifact must still be independently observed before technical PASS. Real external revenue and verified bank receipt remain unproven.  
-**NEXT ACTION —** Verify exact-main CI and one orchestrator workflow artifact; then use the ranked discovery output to open the first qualified revenue door without adding new architecture.
+**STATE — HOLD — EXACT-MAIN CI + DURABLE CLOUD STATE + REAL-WORLD ECONOMIC PROOF**  
+**CLAIM —** AEC now contains the 24/7 discovery orchestrator, 20-door Revenue Mesh, persistent Worker Runtime v0.1, qualification bridge, bounded retry/evidence ledger, and the first three execution workers.  
+**EVIDENCE —** Tests cover queue assignment, capability matching, Human Threshold release, bounded retry exhaustion, controlled production, DoneCheck acceptance, anti-self-economy settlement, and QUALIFIED-only execution admission. Exact-main GitHub Actions must still show a verifiable successful run before technical PASS. No real banked external revenue has yet been proven.  
+**NEXT ACTION —** Verify exact-main CI and hourly runtime artifacts, then add the durable cloud job-state backend and feed one truly QUALIFIED job through Production → QA/DoneCheck → Settlement evidence without relaxing Human Threshold or €0 gates.
