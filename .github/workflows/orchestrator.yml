@@ -1,0 +1,33 @@
+name: aec-orchestrator
+
+on:
+  schedule:
+    - cron: "17 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: aec-orchestrator
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run read-only revenue mesh cycle
+        run: python scripts/run_orchestrator.py
+      - name: Upload cycle evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: aec-orchestrator-${{ github.run_id }}
+          path: runtime/orchestrator-latest.json
+          if-no-files-found: error
+          retention-days: 14
