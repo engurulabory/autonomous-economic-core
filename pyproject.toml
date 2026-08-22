@@ -1,0 +1,14 @@
+[build-system]
+requires = []
+build-backend = ""
+
+[project]
+name = "autonomous-economic-core"
+version = "0.1.0"
+description = "Verified economic agency core for lawful, policy-governed autonomous digital value creation."
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.aec]
+base_currency = "EUR"
+zero_capital_required = true
