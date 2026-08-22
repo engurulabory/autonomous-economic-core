@@ -16,9 +16,10 @@ Turn the repository-complete v1.1 package into observable production evidence wi
 4. Create a Worker named `aec-durable-state`.
 5. Bind the D1 database to the Worker with binding name `DB`.
 6. Load `deploy/cloudflare/schema.sql` into the D1 database.
-7. Deploy `deploy/cloudflare/worker.js` as the Worker code.
-8. Create a strong secret named `AEC_STATE_TOKEN` in the Worker. Never paste the value into chat or commit it.
-9. Record the Worker HTTPS URL. The public `/health` endpoint should return an object with `ok: true`, service `aec-durable-state`, version `1.1`.
+7. Connect the Worker build source to `engurulabory/autonomous-economic-core`, production branch `main`, root directory `deploy/cloudflare`, with no build command and deploy command `npx wrangler deploy`.
+8. Keep non-production/preview builds disabled for the first commissioning pass so preview branches cannot touch the production D1 state.
+9. Create a strong secret named `AEC_STATE_TOKEN` in the Worker. Never paste the value into chat or commit it.
+10. Record the Worker HTTPS URL. The public `/health` endpoint should return an object with `ok: true`, service `aec-durable-state`, version `1.1`.
 
 No paid plan, card charge, paid add-on, Workers Paid upgrade or other capital outlay is required for this first proof. If Cloudflare presents a required payment before the listed actions can continue, stop and classify the commissioning step HOLD/BLOCKED pending review.
 
