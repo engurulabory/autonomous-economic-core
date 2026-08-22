@@ -1,0 +1,11 @@
+name = "aec-durable-state"
+main = "worker.js"
+compatibility_date = "2026-08-22"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "aec-durable-state"
+database_id = "REPLACE_WITH_D1_DATABASE_ID"
+
+# Configure AEC_STATE_TOKEN as a secret with `wrangler secret put AEC_STATE_TOKEN`.
+# Never commit the token.
