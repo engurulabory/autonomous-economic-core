@@ -16,6 +16,9 @@ jobs:
   discover-and-run-workers:
     runs-on: ubuntu-latest
     timeout-minutes: 12
+    env:
+      AEC_STATE_URL: ${{ secrets.AEC_STATE_URL }}
+      AEC_STATE_TOKEN: ${{ secrets.AEC_STATE_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -25,6 +28,8 @@ jobs:
         run: python scripts/run_orchestrator.py
       - name: Boot AEC Worker Runtime v0.1
         run: python scripts/run_workers.py
+      - name: Probe AEC Durable State Core v1.1
+        run: python scripts/probe_durable_state.py
       - name: Upload cycle evidence
         if: always()
         uses: actions/upload-artifact@v4
@@ -33,5 +38,6 @@ jobs:
           path: |
             runtime/orchestrator-latest.json
             runtime/worker-runtime-latest.json
+            runtime/durable-state-latest.json
           if-no-files-found: error
           retention-days: 14
