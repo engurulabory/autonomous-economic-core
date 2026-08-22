@@ -50,6 +50,34 @@ Opportunity score:
 - task simplicity 5,
 - payout speed 5.
 
+## 20-door Revenue Mesh™
+
+AEC™ tracks 20 independent revenue doors spanning agent-native bounties, open-source work, research, QA, data work, owned digital assets, APIs, licensing, direct B2B micro-services and recurring monitoring services.
+
+`aec/revenue_mesh.py` defines the canonical 20-door registry and the full production PASS rule. Full PASS requires real external value, verified work/sale, settlement, payout, verified approved-account receipt, verified bank receipt, finalized costs and positive net value.
+
+## AEC 24/7 Orchestrator™ v0.1
+
+The first unattended runtime is now device-independent and read-only:
+
+- scheduled by GitHub Actions every hour;
+- manual dispatch supported;
+- each provider isolated so one failure does not stop the cycle;
+- cycle evidence written to `runtime/orchestrator-latest.json` and uploaded as an artifact;
+- no unattended wallet signing, legal acceptance, KYC, purchase, bid, claim, submission or money movement.
+
+First five revenue-door adapters:
+
+1. Taskmarket → agent-native bounties
+2. Superteam → research/analysis tasks
+3. TaskBounty → open-source bug bounties
+4. GitHub public bounty issues → bounty discovery
+5. Owned Assets → one-file utility products
+
+A discovered candidate is only discovery evidence. Canonical verification and all hard gates still apply before execution.
+
+See `docs/ORCHESTRATOR_V0_1.md`.
+
 ## Security and authority
 
 Public task/repository content is untrusted data. Requests to expose system prompts, environment variables, private keys, seed phrases, credentials, cookies, tokens or signing material are automatic rejection triggers.
@@ -66,15 +94,12 @@ Core modules include:
 - `aec/market_evidence.py` — timestamped canonical market evidence records and competition fields;
 - `aec/receipts.py` — separate wallet and bank receipt evidence schemas;
 - `aec/taskmarket_adapter.py` — Taskmarket canonical task → exact action → market evidence → opportunity score → integrity decision mapping;
-- `connectors/taskmarket.py` — zero-cost read-only Taskmarket discovery/canonical task connector.
+- `aec/revenue_mesh.py` — canonical 20-door revenue registry + full economic PASS;
+- `aec/orchestrator.py` — resilient unattended discovery cycle;
+- `aec/door_adapters.py` — first five operational revenue-door adapters;
+- `connectors/taskmarket.py`, `connectors/superteam.py`, `connectors/taskbounty.py`, `connectors/github_bounties.py`, `connectors/owned_assets.py` — read-only source adapters.
 
 The first-proof Taskmarket adapter is deliberately limited to bounty-mode `submit` actions. Claim deposits, paid pitch/proof/bid routes, requester-side acceptance and other money-moving actions require separate exact-action evaluation and are not silently generalized from the bounty path.
-
-Research and reference documents:
-- `docs/RESEARCH_SYNTHESIS_2026-08-22.md`;
-- `docs/REFERENCE_SYSTEMS.md`;
-- `docs/SOURCE_REGISTRY.md`;
-- `docs/PRODUCT_CONSTITUTION.md`.
 
 ## Governance
 
@@ -100,7 +125,7 @@ Private operational data: credentials, private keys, seed phrases, live account 
 
 ## Status
 
-**STATE — HOLD — CI + HUMAN THRESHOLD / REAL-WORLD PROOF**  
-**CLAIM —** The first-proof Taskmarket canonical adapter, exact-action zero-capital gate, adversarial opportunity screening, receipt separation and read-only connector are represented in the public core.  
-**EVIDENCE —** Adapter tests cover free submit qualification, unknown-country HOLD, missing action rejection, closed submission rejection, paid-submit rejection, prompt-exfiltration rejection and non-bounty scope rejection. GitHub Actions exists for Python 3.11/3.12 unit tests and compile checks, but the latest commit must show a verifiable successful run before technical PASS is claimed. Real external earning, acceptance, settlement, reconciliation and bank receipt are not yet proven.  
-**NEXT ACTION —** Verify CI on the exact main SHA, revalidate one current Taskmarket bounty through the canonical adapter, obtain Human Threshold approval for legal identity/wallet setup, then run The One Cent Test™.
+**STATE — HOLD — CI + REAL-WORLD ECONOMIC PROOF**  
+**CLAIM —** AEC 24/7 Orchestrator™ v0.1 and the first five revenue-door adapters are represented in main with hourly device-independent discovery, provider isolation, artifact evidence, exact-action zero-capital gates and bank-receipt finality preserved.  
+**EVIDENCE —** Unit tests cover orchestrator provider isolation, candidate validation and the five-adapter registry. GitHub Actions workflows exist for Python 3.11/3.12 tests/compile and the hourly read-only orchestrator. Exact-main CI and the first scheduled runtime artifact must still be independently observed before technical PASS. Real external revenue and verified bank receipt remain unproven.  
+**NEXT ACTION —** Verify exact-main CI and one orchestrator workflow artifact; then use the ranked discovery output to open the first qualified revenue door without adding new architecture.
