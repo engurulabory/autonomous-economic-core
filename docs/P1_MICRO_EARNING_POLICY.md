@@ -6,16 +6,26 @@ IMPLEMENTED — technical policy layer added after AEC v1.1 Technical Commission
 
 ## Claim
 
-AEC can now evaluate a discovered opportunity on a fail-closed economic basis before later selection or execution gates.
+AEC evaluates discovered opportunities on a fail-closed economic basis in both EUR and USD before later selection or execution gates.
 
 P1 does not authorize external action and does not prove earned, settled or banked value.
+
+## Currency policy
+
+EUR and USD are first-class working currencies.
+
+- Opportunities may arrive naturally in EUR or USD.
+- Opportunities in other supported currencies may be normalized only with verified FX evidence.
+- Every selectable opportunity exposes both EUR and USD economic outputs.
+- EUR/USD FX must be verified and time-stamped by the later market/FX evidence layer; unknown FX is HOLD.
+- Neither EUR nor USD is treated as revenue evidence by itself; they are comparison/accounting views of the same opportunity.
 
 ## Canonical economic inputs
 
 Each opportunity is evaluated with:
 
 - expected gross value;
-- currency;
+- native currency;
 - estimated execution time;
 - acceptance probability;
 - payment probability;
@@ -24,9 +34,8 @@ Each opportunity is evaluated with:
 - expected other cost;
 - exact worker-side upfront cost;
 - independent external counterparty status;
-- verified FX-to-EUR rate when the natural currency is not EUR.
-
-EUR is the canonical comparison currency. Native USD and other currencies remain permitted when a verified conversion rate is supplied. Unknown FX is HOLD.
+- verified EUR/USD FX rate;
+- verified FX-to-EUR rate when the natural currency is neither EUR nor USD.
 
 ## Zero-capital rule
 
@@ -39,33 +48,34 @@ Post-acceptance fees, taxes and payout costs may be non-zero; they reduce expect
 
 ## Economic calculation
 
+For the same opportunity P1 calculates both views:
+
 `expected net EUR = gross EUR - fees EUR - taxes EUR - other cost EUR`
 
-`risk-adjusted expected net EUR = expected net EUR × acceptance probability × payment probability`
+`expected net USD = gross USD - fees USD - taxes USD - other cost USD`
 
-`expected net EUR/hour = risk-adjusted expected net EUR ÷ estimated minutes × 60`
+`risk-adjusted expected net = expected net × acceptance probability × payment probability`
+
+`expected net/hour = risk-adjusted expected net ÷ estimated minutes × 60`
+
+Outputs include at minimum:
+
+- expected net EUR;
+- expected net USD;
+- risk-adjusted net EUR;
+- risk-adjusted net USD;
+- expected net €/hour;
+- expected net $/hour.
 
 Non-positive expected net value is BLOCKED.
 
 ## Fail-closed behavior
 
-Critical unknowns produce HOLD, including:
-
-- counterparty independence;
-- exact worker-side upfront cost;
-- gross value;
-- execution time;
-- acceptance probability;
-- payment probability;
-- fees/taxes/other cost;
-- currency;
-- required FX rate.
+Critical unknowns produce HOLD, including counterparty independence, exact worker-side upfront cost, gross value, execution time, acceptance probability, payment probability, fees/taxes/other cost, currency and required FX evidence.
 
 ## Authority boundary
 
-P1 PASS means only:
-
-> Economic data is sufficiently verified for the opportunity to enter later selection gates.
+P1 PASS means only that economic data is sufficiently verified for the opportunity to enter later selection gates.
 
 It does not authorize bidding, account creation, signing, purchases, submissions, payout changes, money movement or any revenue claim.
 
@@ -75,14 +85,15 @@ Human Threshold™, action qualification, platform policy, DoneCheck™, settlem
 
 P1 technical acceptance requires:
 
-1. Exact €0 worker-side upfront-cost gate.
+1. Exact €0 / $0 worker-side upfront-cost gate.
 2. Fail-closed HOLD on critical unknowns.
 3. Positive-net-value enforcement.
 4. Acceptance/payment probability adjustment.
-5. EUR normalization with verified FX for non-EUR opportunities.
-6. Deterministic expected net €/hour output.
-7. Unit coverage for PASS, HOLD and BLOCKED paths.
+5. EUR and USD as first-class economic outputs.
+6. Verified EUR/USD normalization.
+7. Deterministic expected net €/hour and $/hour outputs.
+8. Unit coverage for EUR PASS, USD PASS, HOLD and BLOCKED paths.
 
 ## Next action
 
-P2 — Smallest-Profitable-Work Selector™ should consume P1 assessments and rank selectable opportunities while preserving all existing governance and authority gates.
+P2 — Smallest-Profitable-Work Selector™ consumes the dual-currency P1 assessments and ranks selectable opportunities while preserving all existing governance and authority gates.
