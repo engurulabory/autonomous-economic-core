@@ -2,7 +2,9 @@
 
 ## State
 
-HOLD — live external commissioning required.
+PASS — live technical commissioning completed on 2026-08-23 with 24/24 hourly cycles PASS. Canonical evidence: `docs/V1_1_FINAL_PROOF_2026-08-23.md`.
+
+Economic Finality remains HOLD until The One Cent Test™ is completed with real external settlement and Verified Banked Net Value.
 
 ## Goal
 
@@ -60,15 +62,11 @@ Terminal failures must reach dead-letter rather than loop forever.
 
 ## 24-cycle gate
 
-Persistent 7/24 unattended execution remains HOLD until 24 consecutive scheduled hourly cycles are observed with:
+PASS — 24 consecutive scheduled hourly cycles were observed and all 24 reported PASS in the live `/commissioning/proof` result recorded on 2026-08-23.
 
-- remote health PASS;
-- no authoritative state loss;
-- no duplicate execution;
-- audit chain valid;
-- worker heartbeat present;
-- cross-run persistence proven;
-- secrets absent from artifacts/log output.
+Canonical evidence: `docs/V1_1_FINAL_PROOF_2026-08-23.md`.
+
+The observed commissioning proof also reported bootstrap, persistence, failure recovery and audit integrity PASS.
 
 ## Technical 100/100 gate
 
