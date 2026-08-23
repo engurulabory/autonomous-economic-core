@@ -1,9 +1,9 @@
 name = "aec-durable-state"
-main = "worker.js"
+main = "runtime-v1_1.js"
 compatibility_date = "2026-08-22"
 
 [triggers]
-crons = ["*/15 * * * *"]
+crons = ["*/5 * * * *", "17 * * * *"]
 
 [[d1_databases]]
 binding = "DB"
