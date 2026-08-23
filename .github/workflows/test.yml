@@ -12,6 +12,7 @@ jobs:
   unit:
     runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
         python-version: ["3.11", "3.12"]
     steps:
@@ -20,7 +21,23 @@ jobs:
         with:
           python-version: ${{ matrix.python-version }}
       - name: Run zero-dependency tests
-        run: python -m unittest discover -s tests -v
+        shell: bash
+        run: |
+          set +e
+          python -m unittest discover -s tests -v > unit-${{ matrix.python-version }}.log 2>&1
+          code=$?
+          cat unit-${{ matrix.python-version }}.log
+          echo "$code" > unit-${{ matrix.python-version }}.exit
+          exit "$code"
+      - name: Publish unit diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p1-p19-unit-${{ matrix.python-version }}
+          path: |
+            unit-${{ matrix.python-version }}.log
+            unit-${{ matrix.python-version }}.exit
+          retention-days: 3
       - name: Compile core, connectors, tests and scripts
         run: python -m compileall -q aec connectors tests scripts
       - name: Verify Cloudflare D1 schema and gateway contract
@@ -34,4 +51,20 @@ jobs:
         with:
           node-version: "22"
       - name: Syntax-check zero-dependency Cloudflare Worker
-        run: node --check deploy/cloudflare/worker.js
+        shell: bash
+        run: |
+          set +e
+          node --check deploy/cloudflare/worker.js > cloudflare-syntax.log 2>&1
+          code=$?
+          cat cloudflare-syntax.log
+          echo "$code" > cloudflare-syntax.exit
+          exit "$code"
+      - name: Publish Cloudflare diagnostics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p1-p19-cloudflare-syntax
+          path: |
+            cloudflare-syntax.log
+            cloudflare-syntax.exit
+          retention-days: 3
