@@ -27,11 +27,18 @@ from aec.micro_earning_policy import MicroEarningAssessment, MicroEarningState
 
 def assessment(hourly: str, net: str = "0.01") -> MicroEarningAssessment:
     return MicroEarningAssessment(
-        MicroEarningState.PASS,
-        "ok",
-        Decimal(net), Decimal("0"), Decimal(net), Decimal(net), Decimal(hourly),
-        Decimal(net), Decimal("0"), Decimal(net), Decimal(net), Decimal(hourly),
-        "EUR",
+        state=MicroEarningState.PASS,
+        reason="ok",
+        gross_eur=Decimal(net),
+        gross_usd=Decimal(net),
+        expected_total_cost_eur=Decimal("0"),
+        expected_total_cost_usd=Decimal("0"),
+        expected_net_eur=Decimal(net),
+        expected_net_usd=Decimal(net),
+        risk_adjusted_net_eur=Decimal(net),
+        risk_adjusted_net_usd=Decimal(net),
+        expected_net_per_hour_eur=Decimal(hourly),
+        expected_net_per_hour_usd=Decimal(hourly),
     )
 
 
