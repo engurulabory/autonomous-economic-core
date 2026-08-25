@@ -1,8 +1,8 @@
-# AEC™ — P1–P19 Economic / Field Readiness
+# AEC™ — P1–P20 Economic / Field Readiness
 
 ## State
 
-HOLD — repository implementation is present through P19; exact-main CI and real-world economic acceptance remain separate gates.
+HOLD — repository implementation is present through P20; exact-main CI and real-world economic acceptance remain separate gates.
 
 ## Governing rule
 
@@ -11,6 +11,10 @@ HOLD — repository implementation is present through P19; exact-main CI and rea
 A package may be technically implemented and unit-tested while its real-field acceptance remains HOLD. No package is allowed to manufacture external evidence.
 
 EUR and USD are first-class economic working currencies. EUR remains a canonical comparison/accounting plane where normalization is required; USD values are retained and exposed rather than discarded.
+
+Before revenue optimization, P20 enforces the locked order:
+
+`PERMISSIBILITY → TRUST → NET VALUE → SPEED`
 
 ## Implementation matrix
 
@@ -35,6 +39,7 @@ EUR and USD are first-class economic working currencies. EUR remains a canonical
 | P17 Competitive Pattern Assimilation Core™ | `aec/field_expansion_core.py` | Anti-Copy + adoption-gate tests | controlled external-pattern benefit proof HOLD |
 | P18 Agent-Native Micro-Service Revenue Core™ | `aec/field_expansion_core.py` | canonical 3 + 5-service catalog tests | live endpoint + independent paid call HOLD |
 | P19 Payment / Payout Router™ | `aec/field_expansion_core.py` | policy/currency/fee/speed routing tests | real compatible payout + settlement proof HOLD |
+| P20 ENGÜRÜ SHARIAH ECONOMIC GUARD™ | `aec/shariah_economic_guard.py` | deterministic PASS/HOLD/BLOCKED + Human Threshold tests | external opportunity/payment-rail review HOLD |
 
 ## Locked P18 canonical order
 
@@ -48,16 +53,22 @@ The machine-service catalog contains at least five entries. Publishing a catalog
 
 The Payment / Payout Router™ selects a compatible verified rail by expected net settlement value, reliability, settlement speed, fees and risk. Selection never authorizes money movement. Human Threshold™ remains mandatory wherever payment, payout, account ownership, KYC, signing or irreversible financial action requires human authority.
 
+## P20 authority boundary
+
+The ENGÜRÜ SHARIAH ECONOMIC GUARD™ must classify every revenue-door candidate before economic ranking or execution selection. Explicit prohibited conditions are BLOCKED; material unknowns are HOLD; only verified candidates are PASS. P20 is an operational policy guard, not an automated fatwa engine, and cannot replace qualified human religious/legal review where that review is required.
+
 ## Economic acceptance sequence
 
-`TECHNICAL IMPLEMENTATION → EXACT-MAIN CI → SANDBOX/RUNTIME EVIDENCE → ONE CENT TEST → SETTLEMENT → APPROVED ACCOUNT RECEIPT → BANK RECEIPT → RECONCILIATION → VERIFIED BANKED NET VALUE`
+`TECHNICAL IMPLEMENTATION → EXACT-MAIN CI → SHARIAH ECONOMIC GUARD → SANDBOX/RUNTIME EVIDENCE → ONE CENT TEST → SETTLEMENT → APPROVED ACCOUNT RECEIPT → BANK RECEIPT → RECONCILIATION → VERIFIED BANKED NET VALUE`
 
 Until the final chain exists, `economic_finality = HOLD`.
 
 ## Next acceptance action
 
-1. Obtain exact-main CI evidence for P1–P19 implementation.
-2. Run controlled runtime proofs for P4/P5/P7/P12/P16.
-3. Publish one P18 canonical service endpoint without weakening policy/authority gates.
-4. Perform one independent paid call and route its payout through P19.
-5. Complete P10 One Cent Test™ with bank receipt and reconciled VBNV ≥ €0.01.
+1. Obtain exact-main CI evidence for P1–P20 implementation.
+2. Wire P20 before P6 revenue-door ranking and every execution path.
+3. Classify all existing revenue-door candidates and persist assessment evidence.
+4. Run controlled runtime proofs for P4/P5/P7/P12/P16.
+5. Publish one P18 canonical service endpoint without weakening policy/authority gates.
+6. Perform one independent paid call and route its payout through P19 after P20 PASS.
+7. Complete P10 One Cent Test™ with bank receipt and reconciled VBNV ≥ €0.01.
