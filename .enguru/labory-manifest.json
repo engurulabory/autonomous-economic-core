@@ -1,0 +1,27 @@
+{
+  "productId": "autonomous-economic-core",
+  "productName": "AUTONOMOUS ECONOMIC CORE™",
+  "repository": "engurulabory/autonomous-economic-core",
+  "principleId": "ENGURU_LABORY_CONTROL_PLANE_V1",
+  "contractVersion": "1.0.0",
+  "controlPlane": "ENGURU_LABORY",
+  "executionPlane": true,
+  "domainAutonomy": true,
+  "mayOverrideGovernance": false,
+  "canonicalContract": {
+    "repository": "engurulabory/enguru-website-factory",
+    "path": "packages/labory-operating-contract/index.mjs",
+    "transition": "Compatibility source only. Canonical migration to Engurulaboratuvari remains HOLD until Product & Core Map PASS and fleet dependency verification."
+  },
+  "governance": {
+    "intent": true,
+    "authority": true,
+    "languageGovernance": true,
+    "verifiedOperatingModel": true,
+    "doneCheck": true,
+    "humanThreshold": true,
+    "repositorySteward": true,
+    "repositorySecurityGuard": true,
+    "verifiedLearning": true
+  }
+}
