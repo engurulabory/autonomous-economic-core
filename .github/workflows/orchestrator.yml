@@ -26,6 +26,9 @@ jobs:
       - name: Run read-only revenue mesh cycle
         run: python scripts/run_orchestrator.py
 
+      - name: Run Commercial Closure Pass
+        run: python scripts/run_commercial_closure.py
+
       - name: Boot local reference Worker Runtime
         run: python scripts/run_workers.py
 
@@ -51,6 +54,7 @@ jobs:
           name: aec-orchestrator-${{ github.run_id }}
           path: |
             runtime/orchestrator-latest.json
+            runtime/commercial-closure-latest.json
             runtime/worker-runtime-latest.json
             runtime/durable-state-latest.json
             runtime/durability-canary-latest.json
