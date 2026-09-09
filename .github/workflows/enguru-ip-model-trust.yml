@@ -1,0 +1,22 @@
+name: ENGURU IP Model Trust Fleet
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  ip-model-trust-fleet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch pinned ENGURU Fleet Gate
+        run: curl --fail --silent --show-error --location https://raw.githubusercontent.com/engurulabory/Engurulaboratuvari/92e1689d486dc056d91d20417dba3ea0ef9c1039/tools/fleet_ip_gate.py -o /tmp/fleet_ip_gate.py
+      - name: Enforce IP & Model Trust
+        run: python /tmp/fleet_ip_gate.py
