@@ -17,6 +17,6 @@ jobs:
         with:
           python-version: '3.12'
       - name: Fetch pinned ENGURU Fleet Gate
-        run: curl --fail --silent --show-error --location https://raw.githubusercontent.com/engurulabory/Engurulaboratuvari/93a3ebd474b58db1f4e33d661532f10ccd2c9880/tools/fleet_ip_gate.py -o /tmp/fleet_ip_gate.py
+        run: curl --fail --silent --show-error --location https://raw.githubusercontent.com/engurulabory/Engurulaboratuvari/cb3c5181ac01292443949f77e3e38c5cf44ef063/tools/fleet_ip_gate.py -o /tmp/fleet_ip_gate.py
       - name: Enforce IP & Model Trust
         run: python /tmp/fleet_ip_gate.py
