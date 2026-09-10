@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 from dataclasses import dataclass
 from decimal import Decimal
 from typing import Any
@@ -8,6 +9,7 @@ from urllib.request import Request, urlopen
 
 
 PUBLIC_FEED = "https://earn.superteam.fun/api/listings?take=100"
+AGENT_FEED = "https://superteam.fun/api/agents/listings/live?take=100"
 AGENT_ACCESS = {"AGENT_ALLOWED", "AGENT_ONLY"}
 
 
@@ -24,21 +26,31 @@ class SuperteamOpportunity:
 
 
 class SuperteamConnector:
-    """Read-only discovery over the public Superteam Earn listing feed.
+    """Read-only discovery of Superteam Earn agent-eligible listings.
 
-    The connector intentionally does not register agents, submit work, sign
-    wallets, perform KYC, or claim payouts. Those are Human Threshold events.
+    When SUPERTEAM_AGENT_API_KEY is present, use Superteam's official agent listing
+    endpoint so AGENT_ONLY opportunities can be discovered. Without a key, retain
+    the public-feed fallback and still admit only AGENT_ALLOWED/AGENT_ONLY + OPEN.
+
+    Registration, submission, human claiming, KYC and payout authority remain
+    outside this read-only connector.
     """
 
-    def __init__(self, timeout_seconds: int = 15) -> None:
+    def __init__(self, timeout_seconds: int = 15, api_key: str | None = None) -> None:
         self.timeout_seconds = timeout_seconds
+        self.api_key = api_key or os.getenv("SUPERTEAM_AGENT_API_KEY")
 
     def discover(self) -> list[SuperteamOpportunity]:
-        request = Request(PUBLIC_FEED, headers={"Accept": "application/json"})
-        with urlopen(request, timeout=self.timeout_seconds) as response:  # nosec B310 - fixed HTTPS host
+        url = AGENT_FEED if self.api_key else PUBLIC_FEED
+        headers = {"Accept": "application/json"}
+        if self.api_key:
+            headers["Authorization"] = f"Bearer {self.api_key}"
+
+        request = Request(url, headers=headers)
+        with urlopen(request, timeout=self.timeout_seconds) as response:  # nosec B310 - fixed HTTPS hosts
             payload = json.loads(response.read().decode("utf-8"))
 
-        rows = payload if isinstance(payload, list) else payload.get("listings", payload.get("data", []))
+        rows = self._rows(payload)
         opportunities: list[SuperteamOpportunity] = []
         for row in rows:
             access = str(row.get("agentAccess", "")).upper()
@@ -47,6 +59,16 @@ class SuperteamConnector:
                 continue
             opportunities.append(self._normalize(row))
         return opportunities
+
+    @staticmethod
+    def _rows(payload: Any) -> list[dict[str, Any]]:
+        if isinstance(payload, list):
+            rows = payload
+        elif isinstance(payload, dict):
+            rows = payload.get("listings", payload.get("data", payload.get("items", [])))
+        else:
+            rows = []
+        return [row for row in rows if isinstance(row, dict)]
 
     @staticmethod
     def _normalize(row: dict[str, Any]) -> SuperteamOpportunity:
