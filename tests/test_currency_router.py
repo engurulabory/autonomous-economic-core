@@ -26,7 +26,7 @@ class CurrencyRouterTests(unittest.TestCase):
         )
         for code, rate in samples:
             opportunity = CurrencyOpportunity(
-                code.lower(), code, Decimal("10"), Decimal("1"), Decimal("0.1"),
+                code.lower(), code, Decimal("10"), Decimal("1"), Decimal("0"),
                 Decimal("30"), Decimal("1"), Decimal("1"),
                 FxEvidence(code, Decimal(rate), now, "test-source", f"fx-{code}"),
             )
