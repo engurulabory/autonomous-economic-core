@@ -1,0 +1,443 @@
+{
+  "schema_version": "1.1",
+  "platform": "Clickworker",
+  "official_url": "https://www.clickworker.com",
+  "checked_at": "2026-09-10T09:13:00Z",
+  "evidence_timestamp": "2026-09-10T09:13:00Z",
+  "state": "BLOCKED",
+  "account_state": "UNVERIFIED_EXISTING_ACCOUNT",
+  "account_verified": false,
+  "account_reuse_check": {
+    "state": "HOLD",
+    "scope": "Canonical repository inspected; authenticated platform session and secret metadata not inspected. Existing account absence is not asserted.",
+    "new_account_created": false
+  },
+  "qualification": {
+    "platform_active": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "W1"
+      ],
+      "reason": "Public worker agreement accessible."
+    },
+    "public_or_authenticated_discovery_available": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "Turkey_eligible": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "individual_account_allowed": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "W1"
+      ],
+      "reason": "Adult individual account, platform activation required."
+    },
+    "agent_participation_allowed": {
+      "state": "BLOCKED",
+      "value": false,
+      "evidence_refs": [
+        "W1"
+      ],
+      "reason": "AEC autonomous worker route conflicts with §4.7; third-party restrictions also apply."
+    },
+    "automation_allowed": {
+      "state": "BLOCKED",
+      "value": false,
+      "evidence_refs": [
+        "W1"
+      ],
+      "reason": "§4.7 prohibits automated service performance."
+    },
+    "autonomous_submission_allowed": {
+      "state": "BLOCKED",
+      "value": false,
+      "evidence_refs": [
+        "W1"
+      ],
+      "reason": "No automated service completion route authorized under standard agreement."
+    },
+    "account_creation_cost": {
+      "state": "PASS",
+      "value": {
+        "amount": "0",
+        "currency": "EUR"
+      },
+      "evidence_refs": [
+        "W1"
+      ],
+      "reason": "Signup only."
+    },
+    "exact_action_upfront_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "bid_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "claim_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "required_gas_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "deposit_or_bond": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "subscription_required": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "KYC_requirement": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "terms_acceptance_requirement": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "W1"
+      ],
+      "reason": "Legal acceptance required before registration; not accepted this session."
+    },
+    "tax_or_invoice_requirement": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "supported_work_types": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "acceptance_mechanism": {
+      "state": "PASS",
+      "value": "client/platform inspection, usually seven days; provisional credit is not acceptance",
+      "evidence_refs": [
+        "W1"
+      ],
+      "reason": "Project exceptions possible."
+    },
+    "dispute_mechanism": {
+      "state": "PASS",
+      "value": "objection and ombudsman mediation for account block",
+      "evidence_refs": [
+        "W1"
+      ],
+      "reason": "Does not guarantee payment."
+    },
+    "payout_method": {
+      "state": "HOLD",
+      "value": "account-specific Payoneer or eligible bank route",
+      "evidence_refs": [
+        "W2",
+        "W3"
+      ],
+      "reason": "Turkey route not verified."
+    },
+    "minimum_payout": {
+      "state": "HOLD",
+      "value": "Payoneer EUR/USD20; route-specific",
+      "evidence_refs": [
+        "W1",
+        "W2"
+      ],
+      "reason": "General terms EUR10 differs from route-specific help; exact account route controls."
+    },
+    "payout_fee": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "withdrawal_fee": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "supported_currencies": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "Turkey_payout_supported": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "bank_reachable": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "settlement_time": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "account_risk": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    }
+  },
+  "zero_capital_items": {
+    "signup": {
+      "state": "PASS",
+      "value": "EUR0",
+      "evidence_refs": [
+        "W1"
+      ]
+    },
+    "subscription": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "proposal_bid": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "claim": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "deposit": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "bond": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "gas": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "wallet_funding": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "paid_verification": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "paid_api": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "mandatory_advertising": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    }
+  },
+  "shariah_state": "HOLD",
+  "p20": {
+    "state": "HOLD",
+    "reason": "No exact live opportunity selected; no economic optimization or production authorized.",
+    "checks": {
+      "real_value": "HOLD",
+      "clear_scope": "HOLD",
+      "clear_fee": "HOLD",
+      "no_riba": "HOLD",
+      "no_maysir": "HOLD",
+      "no_excessive_gharar": "HOLD",
+      "no_deception": "HOLD",
+      "ownership": "HOLD",
+      "payment_route": "HOLD"
+    }
+  },
+  "settlement_currency": null,
+  "fx": {
+    "state": "HOLD",
+    "conversion_performed": false,
+    "source": null,
+    "timestamp": null,
+    "conversion_fee": null
+  },
+  "human_threshold": [
+    {
+      "id": "clickworker-terms",
+      "state": "PENDING_CONDITIONAL",
+      "action": "Human reviews and accepts binding terms only after qualification prerequisites pass.",
+      "reached_in_ui": false
+    },
+    {
+      "id": "clickworker-identity-payout",
+      "state": "PENDING_CONDITIONAL",
+      "action": "Human completes any identity verification and approved payout linkage in provider interface when required.",
+      "reached_in_ui": false
+    }
+  ],
+  "evidence_refs": [
+    "W1",
+    "W2",
+    "W3"
+  ],
+  "onboarding_donecheck": "HOLD",
+  "economic_finality": "HOLD",
+  "next_action": "Exclude standard Clickworker autonomous work. Reopen only with an explicit written agreement permitting the exact automated service.",
+  "zero_upfront": "HOLD",
+  "country_eligible": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "individual_allowed": {
+    "state": "PASS",
+    "value": true,
+    "evidence_refs": [
+      "W1"
+    ],
+    "reason": "Adult individual account, platform activation required."
+  },
+  "agent_allowed": {
+    "state": "BLOCKED",
+    "value": false,
+    "evidence_refs": [
+      "W1"
+    ],
+    "reason": "AEC autonomous worker route conflicts with §4.7; third-party restrictions also apply."
+  },
+  "automation_allowed": {
+    "state": "BLOCKED",
+    "value": false,
+    "evidence_refs": [
+      "W1"
+    ],
+    "reason": "§4.7 prohibits automated service performance."
+  },
+  "autonomous_submission_allowed": {
+    "state": "BLOCKED",
+    "value": false,
+    "evidence_refs": [
+      "W1"
+    ],
+    "reason": "No automated service completion route authorized under standard agreement."
+  },
+  "bid_cost": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "claim_cost": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "gas_required": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "kyc_required": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "terms_required": {
+    "state": "PASS",
+    "value": true,
+    "evidence_refs": [
+      "W1"
+    ],
+    "reason": "Legal acceptance required before registration; not accepted this session."
+  },
+  "payout_route": {
+    "state": "HOLD",
+    "value": "account-specific Payoneer or eligible bank route",
+    "evidence_refs": [
+      "W2",
+      "W3"
+    ],
+    "reason": "Turkey route not verified."
+  },
+  "bank_reachable": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "minimum_payout": {
+    "state": "HOLD",
+    "value": "Payoneer EUR/USD20; route-specific",
+    "evidence_refs": [
+      "W1",
+      "W2"
+    ],
+    "reason": "General terms EUR10 differs from route-specific help; exact account route controls."
+  },
+  "currencies": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "fees": {
+    "payout": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "withdrawal": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    }
+  },
+  "evidence_source": [
+    "https://workplace.clickworker.com/en/agreements/10123",
+    "https://support-workplace.clickworker.com/support/solutions/articles/80000672350-what-payment-options-do-i-have-",
+    "https://support-workplace.clickworker.com/support/solutions/articles/80000671469-is-it-possible-to-work-for-clickworker-from-many-countries-all-over-the-world-"
+  ]
+}

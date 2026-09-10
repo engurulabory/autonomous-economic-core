@@ -1,0 +1,456 @@
+{
+  "schema_version": "1.1",
+  "platform": "Superteam",
+  "official_url": "https://superteam.fun/earn",
+  "checked_at": "2026-09-10T09:13:00Z",
+  "evidence_timestamp": "2026-09-10T09:13:00Z",
+  "state": "HOLD",
+  "account_state": "UNVERIFIED_EXISTING_ACCOUNT",
+  "account_verified": false,
+  "account_reuse_check": {
+    "state": "HOLD",
+    "scope": "Canonical repository inspected; authenticated platform session and secret metadata not inspected. Existing account absence is not asserted.",
+    "new_account_created": false
+  },
+  "qualification": {
+    "platform_active": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "S1",
+        "S4"
+      ],
+      "reason": "Public agent surface accessible; account access not established."
+    },
+    "public_or_authenticated_discovery_available": {
+      "state": "PASS",
+      "value": "public shell and documented authenticated API",
+      "evidence_refs": [
+        "S1",
+        "S4"
+      ],
+      "reason": "No authenticated result acquired."
+    },
+    "Turkey_eligible": {
+      "state": "HOLD",
+      "value": "Türkiye participation documented; account-specific eligibility unresolved",
+      "evidence_refs": [
+        "S2",
+        "S3"
+      ],
+      "reason": "Local chapter does not establish full payout chain."
+    },
+    "individual_account_allowed": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "S2"
+      ],
+      "reason": "Subject to age, sanctions and lawful use."
+    },
+    "agent_participation_allowed": {
+      "state": "PASS",
+      "value": "only official agent API and agent-eligible listings",
+      "evidence_refs": [
+        "S1"
+      ],
+      "reason": "Platform permission only; AEC user authority and exact-listing gates still HOLD."
+    },
+    "automation_allowed": {
+      "state": "PASS",
+      "value": "only official agent API and agent-eligible listings",
+      "evidence_refs": [
+        "S1"
+      ],
+      "reason": "Platform permission only; AEC user authority and exact-listing gates still HOLD."
+    },
+    "autonomous_submission_allowed": {
+      "state": "PASS",
+      "value": "only official agent API and agent-eligible listings",
+      "evidence_refs": [
+        "S1"
+      ],
+      "reason": "Platform permission only; AEC user authority and exact-listing gates still HOLD."
+    },
+    "account_creation_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "exact_action_upfront_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "bid_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "claim_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "required_gas_cost": {
+      "state": "HOLD",
+      "value": "may apply",
+      "evidence_refs": [
+        "S2"
+      ],
+      "reason": "Exact route unknown; do not infer mandatory cost for every job."
+    },
+    "deposit_or_bond": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "subscription_required": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "KYC_requirement": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "terms_acceptance_requirement": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "S1"
+      ],
+      "reason": "Legal acceptance required before registration; not accepted this session."
+    },
+    "tax_or_invoice_requirement": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "supported_work_types": {
+      "state": "PASS",
+      "value": [
+        "bounty",
+        "project",
+        "hackathon"
+      ],
+      "evidence_refs": [
+        "S1"
+      ],
+      "reason": "Per-listing eligibility."
+    },
+    "acceptance_mechanism": {
+      "state": "PASS",
+      "value": "sponsor review then human payout claim",
+      "evidence_refs": [
+        "S4"
+      ],
+      "reason": "No actual acceptance."
+    },
+    "dispute_mechanism": {
+      "state": "HOLD",
+      "value": "private counterparty contract; platform disclaims payment liability",
+      "evidence_refs": [
+        "S2"
+      ],
+      "reason": "Exact job contract unresolved."
+    },
+    "payout_method": {
+      "state": "HOLD",
+      "value": "human claim → verified wallet; private fiat alternative possible",
+      "evidence_refs": [
+        "S1",
+        "S2",
+        "S4"
+      ],
+      "reason": "No verified Türkiye bank off-ramp, gas sponsorship, fee or approved account."
+    },
+    "minimum_payout": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "payout_fee": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "withdrawal_fee": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "supported_currencies": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "Turkey_payout_supported": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "bank_reachable": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "settlement_time": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "account_risk": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    }
+  },
+  "zero_capital_items": {
+    "signup": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "subscription": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "proposal_bid": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "claim": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "deposit": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "bond": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "gas": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "wallet_funding": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "paid_verification": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "paid_api": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "mandatory_advertising": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    }
+  },
+  "shariah_state": "HOLD",
+  "p20": {
+    "state": "HOLD",
+    "reason": "No exact live opportunity selected; no economic optimization or production authorized.",
+    "checks": {
+      "real_value": "HOLD",
+      "clear_scope": "HOLD",
+      "clear_fee": "HOLD",
+      "no_riba": "HOLD",
+      "no_maysir": "HOLD",
+      "no_excessive_gharar": "HOLD",
+      "no_deception": "HOLD",
+      "ownership": "HOLD",
+      "payment_route": "HOLD"
+    }
+  },
+  "settlement_currency": null,
+  "fx": {
+    "state": "HOLD",
+    "conversion_performed": false,
+    "source": null,
+    "timestamp": null,
+    "conversion_fee": null
+  },
+  "human_threshold": [
+    {
+      "id": "superteam-terms",
+      "state": "PENDING_CONDITIONAL",
+      "action": "Human reviews and accepts binding terms only after qualification prerequisites pass.",
+      "reached_in_ui": false
+    },
+    {
+      "id": "superteam-identity-payout",
+      "state": "PENDING_CONDITIONAL",
+      "action": "Human completes any identity verification and approved payout linkage in provider interface when required.",
+      "reached_in_ui": false
+    }
+  ],
+  "evidence_refs": [
+    "S1",
+    "S2",
+    "S3",
+    "S4",
+    "R1"
+  ],
+  "onboarding_donecheck": "HOLD",
+  "economic_finality": "HOLD",
+  "next_action": "Resolve exact-action zero cost and Turkey wallet-to-approved-bank route from official evidence; then reuse existing agent if present. Before new legally binding registration obtain human terms acceptance; store key only in runtime secret store.",
+  "zero_upfront": "HOLD",
+  "country_eligible": {
+    "state": "HOLD",
+    "value": "Türkiye participation documented; account-specific eligibility unresolved",
+    "evidence_refs": [
+      "S2",
+      "S3"
+    ],
+    "reason": "Local chapter does not establish full payout chain."
+  },
+  "individual_allowed": {
+    "state": "PASS",
+    "value": true,
+    "evidence_refs": [
+      "S2"
+    ],
+    "reason": "Subject to age, sanctions and lawful use."
+  },
+  "agent_allowed": {
+    "state": "PASS",
+    "value": "only official agent API and agent-eligible listings",
+    "evidence_refs": [
+      "S1"
+    ],
+    "reason": "Platform permission only; AEC user authority and exact-listing gates still HOLD."
+  },
+  "automation_allowed": {
+    "state": "PASS",
+    "value": "only official agent API and agent-eligible listings",
+    "evidence_refs": [
+      "S1"
+    ],
+    "reason": "Platform permission only; AEC user authority and exact-listing gates still HOLD."
+  },
+  "autonomous_submission_allowed": {
+    "state": "PASS",
+    "value": "only official agent API and agent-eligible listings",
+    "evidence_refs": [
+      "S1"
+    ],
+    "reason": "Platform permission only; AEC user authority and exact-listing gates still HOLD."
+  },
+  "bid_cost": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "claim_cost": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "gas_required": {
+    "state": "HOLD",
+    "value": "may apply",
+    "evidence_refs": [
+      "S2"
+    ],
+    "reason": "Exact route unknown; do not infer mandatory cost for every job."
+  },
+  "kyc_required": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "terms_required": {
+    "state": "PASS",
+    "value": true,
+    "evidence_refs": [
+      "S1"
+    ],
+    "reason": "Legal acceptance required before registration; not accepted this session."
+  },
+  "payout_route": {
+    "state": "HOLD",
+    "value": "human claim → verified wallet; private fiat alternative possible",
+    "evidence_refs": [
+      "S1",
+      "S2",
+      "S4"
+    ],
+    "reason": "No verified Türkiye bank off-ramp, gas sponsorship, fee or approved account."
+  },
+  "bank_reachable": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "minimum_payout": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "currencies": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "fees": {
+    "payout": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "withdrawal": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    }
+  },
+  "evidence_source": [
+    "https://superteam.fun/earn/agents",
+    "https://superteam.fun/earn/terms-of-use.pdf",
+    "https://tr.superteam.fun/",
+    "https://superteam.fun/earn/agents/listings",
+    "https://github.com/engurulabory/autonomous-economic-core/blob/328caa38659b68e18a6fc0057121bb3b2535529e/docs/FIELD_RUN_001_LIVE_SCAN_2026-09-10.md"
+  ]
+}

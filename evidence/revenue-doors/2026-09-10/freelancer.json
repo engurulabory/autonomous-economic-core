@@ -1,0 +1,421 @@
+{
+  "schema_version": "1.1",
+  "platform": "Freelancer",
+  "official_url": "https://www.freelancer.com",
+  "checked_at": "2026-09-10T09:13:00Z",
+  "evidence_timestamp": "2026-09-10T09:13:00Z",
+  "state": "BLOCKED",
+  "account_state": "UNVERIFIED_EXISTING_ACCOUNT",
+  "account_verified": false,
+  "account_reuse_check": {
+    "state": "HOLD",
+    "scope": "Canonical repository inspected; authenticated platform session and secret metadata not inspected. Existing account absence is not asserted.",
+    "new_account_created": false
+  },
+  "qualification": {
+    "platform_active": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "F1",
+        "F2"
+      ],
+      "reason": "Public terms and fee schedule available."
+    },
+    "public_or_authenticated_discovery_available": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "Turkey_eligible": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "individual_account_allowed": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "agent_participation_allowed": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "automation_allowed": {
+      "state": "BLOCKED",
+      "value": "express written permission required and not evidenced",
+      "evidence_refs": [
+        "F2"
+      ],
+      "reason": "Do not use automated account access without it."
+    },
+    "autonomous_submission_allowed": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "account_creation_cost": {
+      "state": "PASS",
+      "value": {
+        "amount": "0",
+        "currency": "USD"
+      },
+      "evidence_refs": [
+        "F1"
+      ],
+      "reason": "Signup only."
+    },
+    "exact_action_upfront_cost": {
+      "state": "BLOCKED",
+      "value": "at least USD20 available balance before bidding",
+      "evidence_refs": [
+        "F1"
+      ],
+      "reason": "No top-up authorized; contests not evaluated."
+    },
+    "bid_cost": {
+      "state": "PASS",
+      "value": "six initial free monthly bids; minimum balance still required",
+      "evidence_refs": [
+        "F1"
+      ],
+      "reason": "No zero-capital PASS."
+    },
+    "claim_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "required_gas_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "deposit_or_bond": {
+      "state": "BLOCKED",
+      "value": {
+        "minimum_available_balance": "20.00",
+        "currency": "USD"
+      },
+      "evidence_refs": [
+        "F1",
+        "F2"
+      ],
+      "reason": "Selected project-bid route requires capital."
+    },
+    "subscription_required": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "KYC_requirement": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "terms_acceptance_requirement": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "F1"
+      ],
+      "reason": "Legal acceptance required before registration; not accepted this session."
+    },
+    "tax_or_invoice_requirement": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "supported_work_types": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "acceptance_mechanism": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "dispute_mechanism": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "payout_method": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "minimum_payout": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "payout_fee": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "withdrawal_fee": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "supported_currencies": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "Turkey_payout_supported": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "bank_reachable": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "settlement_time": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "account_risk": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    }
+  },
+  "zero_capital_items": {
+    "signup": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "subscription": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "proposal_bid": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "claim": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "deposit": {
+      "state": "BLOCKED",
+      "value": "USD20 minimum available balance for bids",
+      "evidence_refs": [
+        "F1",
+        "F2"
+      ]
+    },
+    "bond": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "gas": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "wallet_funding": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "paid_verification": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "paid_api": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "mandatory_advertising": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    }
+  },
+  "shariah_state": "HOLD",
+  "p20": {
+    "state": "HOLD",
+    "reason": "No exact live opportunity selected; no economic optimization or production authorized.",
+    "checks": {
+      "real_value": "HOLD",
+      "clear_scope": "HOLD",
+      "clear_fee": "HOLD",
+      "no_riba": "HOLD",
+      "no_maysir": "HOLD",
+      "no_excessive_gharar": "HOLD",
+      "no_deception": "HOLD",
+      "ownership": "HOLD",
+      "payment_route": "HOLD"
+    }
+  },
+  "settlement_currency": null,
+  "fx": {
+    "state": "HOLD",
+    "conversion_performed": false,
+    "source": null,
+    "timestamp": null,
+    "conversion_fee": null
+  },
+  "human_threshold": [
+    {
+      "id": "freelancer-terms",
+      "state": "PENDING_CONDITIONAL",
+      "action": "Human reviews and accepts binding terms only after qualification prerequisites pass.",
+      "reached_in_ui": false
+    }
+  ],
+  "evidence_refs": [
+    "F1",
+    "F2"
+  ],
+  "onboarding_donecheck": "HOLD",
+  "economic_finality": "HOLD",
+  "next_action": "Exclude project bidding under ZERO CAPITAL. Do not fund account. Contest routes would require separate qualification and are not declared blocked solely by bid balance.",
+  "zero_upfront": "BLOCKED",
+  "country_eligible": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "individual_allowed": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "agent_allowed": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "automation_allowed": {
+    "state": "BLOCKED",
+    "value": "express written permission required and not evidenced",
+    "evidence_refs": [
+      "F2"
+    ],
+    "reason": "Do not use automated account access without it."
+  },
+  "autonomous_submission_allowed": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "bid_cost": {
+    "state": "PASS",
+    "value": "six initial free monthly bids; minimum balance still required",
+    "evidence_refs": [
+      "F1"
+    ],
+    "reason": "No zero-capital PASS."
+  },
+  "claim_cost": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "gas_required": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "kyc_required": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "terms_required": {
+    "state": "PASS",
+    "value": true,
+    "evidence_refs": [
+      "F1"
+    ],
+    "reason": "Legal acceptance required before registration; not accepted this session."
+  },
+  "payout_route": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "bank_reachable": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "minimum_payout": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "currencies": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "fees": {
+    "payout": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "withdrawal": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    }
+  },
+  "evidence_source": [
+    "https://www.freelancer.com/feesandcharges",
+    "https://www.freelancer.com/about/terms"
+  ]
+}

@@ -1,0 +1,439 @@
+{
+  "schema_version": "1.1",
+  "platform": "Contra",
+  "official_url": "https://contra.com",
+  "checked_at": "2026-09-10T09:13:00Z",
+  "evidence_timestamp": "2026-09-10T09:13:00Z",
+  "state": "HOLD",
+  "account_state": "UNVERIFIED_EXISTING_ACCOUNT",
+  "account_verified": false,
+  "account_reuse_check": {
+    "state": "HOLD",
+    "scope": "Canonical repository inspected; authenticated platform session and secret metadata not inspected. Existing account absence is not asserted.",
+    "new_account_created": false
+  },
+  "qualification": {
+    "platform_active": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "C1",
+        "C2"
+      ],
+      "reason": "Public official platform documentation accessible; account not tested."
+    },
+    "public_or_authenticated_discovery_available": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "Turkey_eligible": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "individual_account_allowed": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "C1"
+      ],
+      "reason": "Adult independent business requirements apply."
+    },
+    "agent_participation_allowed": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "automation_allowed": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "autonomous_submission_allowed": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "account_creation_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "exact_action_upfront_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "bid_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "claim_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "required_gas_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "deposit_or_bond": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "subscription_required": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "KYC_requirement": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "terms_acceptance_requirement": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "C1"
+      ],
+      "reason": "Legal acceptance required before registration; not accepted this session."
+    },
+    "tax_or_invoice_requirement": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "supported_work_types": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "acceptance_mechanism": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "dispute_mechanism": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "payout_method": {
+      "state": "PASS",
+      "value": "USD balance → TRY local bank",
+      "evidence_refs": [
+        "C2"
+      ],
+      "reason": "Subject to KYC/account eligibility."
+    },
+    "minimum_payout": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "payout_fee": {
+      "state": "HOLD",
+      "value": "platform USD15/29; TRY FX 1%; exact net quote unresolved",
+      "evidence_refs": [
+        "C2"
+      ],
+      "reason": "Do not conflate downstream fees with compulsory upfront payment."
+    },
+    "withdrawal_fee": {
+      "state": "PASS",
+      "value": {
+        "amount": "2.00",
+        "currency": "USD"
+      },
+      "evidence_refs": [
+        "C2"
+      ],
+      "reason": "Published Turkey local transfer fee; not an executed quote."
+    },
+    "supported_currencies": {
+      "state": "PASS",
+      "value": [
+        "USD"
+      ],
+      "evidence_refs": [
+        "C2"
+      ],
+      "reason": "Payment balance; settlement separately TRY."
+    },
+    "Turkey_payout_supported": {
+      "state": "PASS",
+      "value": "TRY local bank payout offered",
+      "evidence_refs": [
+        "C2"
+      ],
+      "reason": "Platform capability only; approved personal account not verified."
+    },
+    "bank_reachable": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "settlement_time": {
+      "state": "PASS",
+      "value": "standard Airwallex bank 4–7 business days, plus applicable funding settlement",
+      "evidence_refs": [
+        "C3"
+      ],
+      "reason": "Published timing, not a settlement receipt."
+    },
+    "account_risk": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    }
+  },
+  "zero_capital_items": {
+    "signup": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "subscription": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "proposal_bid": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "claim": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "deposit": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "bond": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "gas": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "wallet_funding": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "paid_verification": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "paid_api": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "mandatory_advertising": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    }
+  },
+  "shariah_state": "HOLD",
+  "p20": {
+    "state": "HOLD",
+    "reason": "No exact live opportunity selected; no economic optimization or production authorized.",
+    "checks": {
+      "real_value": "HOLD",
+      "clear_scope": "HOLD",
+      "clear_fee": "HOLD",
+      "no_riba": "HOLD",
+      "no_maysir": "HOLD",
+      "no_excessive_gharar": "HOLD",
+      "no_deception": "HOLD",
+      "ownership": "HOLD",
+      "payment_route": "HOLD"
+    }
+  },
+  "settlement_currency": "TRY",
+  "fx": {
+    "state": "HOLD",
+    "conversion_performed": false,
+    "source": null,
+    "timestamp": null,
+    "conversion_fee": null
+  },
+  "human_threshold": [
+    {
+      "id": "contra-terms",
+      "state": "PENDING_CONDITIONAL",
+      "action": "Human reviews and accepts binding terms only after qualification prerequisites pass.",
+      "reached_in_ui": false
+    },
+    {
+      "id": "contra-identity-payout",
+      "state": "PENDING_CONDITIONAL",
+      "action": "Human completes any identity verification and approved payout linkage in provider interface when required.",
+      "reached_in_ui": false
+    }
+  ],
+  "evidence_refs": [
+    "C1",
+    "C2",
+    "C3"
+  ],
+  "onboarding_donecheck": "HOLD",
+  "economic_finality": "HOLD",
+  "next_action": "Obtain explicit permission covering AEC automation and autonomous submissions through an approved interface; resolve exact-action fee timing before onboarding. Do not use AI-friendly marketing as permission.",
+  "zero_upfront": "HOLD",
+  "country_eligible": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "individual_allowed": {
+    "state": "PASS",
+    "value": true,
+    "evidence_refs": [
+      "C1"
+    ],
+    "reason": "Adult independent business requirements apply."
+  },
+  "agent_allowed": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "automation_allowed": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "autonomous_submission_allowed": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "bid_cost": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "claim_cost": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "gas_required": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "kyc_required": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "terms_required": {
+    "state": "PASS",
+    "value": true,
+    "evidence_refs": [
+      "C1"
+    ],
+    "reason": "Legal acceptance required before registration; not accepted this session."
+  },
+  "payout_route": {
+    "state": "PASS",
+    "value": "USD balance → TRY local bank",
+    "evidence_refs": [
+      "C2"
+    ],
+    "reason": "Subject to KYC/account eligibility."
+  },
+  "bank_reachable": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "minimum_payout": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "currencies": {
+    "state": "PASS",
+    "value": [
+      "USD"
+    ],
+    "evidence_refs": [
+      "C2"
+    ],
+    "reason": "Payment balance; settlement separately TRY."
+  },
+  "fees": {
+    "payout": {
+      "state": "HOLD",
+      "value": "platform USD15/29; TRY FX 1%; exact net quote unresolved",
+      "evidence_refs": [
+        "C2"
+      ],
+      "reason": "Do not conflate downstream fees with compulsory upfront payment."
+    },
+    "withdrawal": {
+      "state": "PASS",
+      "value": {
+        "amount": "2.00",
+        "currency": "USD"
+      },
+      "evidence_refs": [
+        "C2"
+      ],
+      "reason": "Published Turkey local transfer fee; not an executed quote."
+    }
+  },
+  "evidence_source": [
+    "https://contra.com/policies/terms",
+    "https://help.contra.com/en/articles/9322934-fees-overview",
+    "https://help.contra.com/en/articles/10008642-payouts"
+  ]
+}

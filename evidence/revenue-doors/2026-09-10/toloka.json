@@ -1,0 +1,429 @@
+{
+  "schema_version": "1.1",
+  "platform": "Toloka",
+  "official_url": "https://toloka.ai",
+  "checked_at": "2026-09-10T09:13:00Z",
+  "evidence_timestamp": "2026-09-10T09:13:00Z",
+  "state": "HOLD",
+  "account_state": "UNVERIFIED_EXISTING_ACCOUNT",
+  "account_verified": false,
+  "account_reuse_check": {
+    "state": "HOLD",
+    "scope": "Canonical repository inspected; authenticated platform session and secret metadata not inspected. Existing account absence is not asserted.",
+    "new_account_created": false
+  },
+  "qualification": {
+    "platform_active": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "T1",
+        "T2"
+      ],
+      "reason": "Current official worker policies accessible."
+    },
+    "public_or_authenticated_discovery_available": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "Turkey_eligible": {
+      "state": "HOLD",
+      "value": "not on published excluded lists",
+      "evidence_refs": [
+        "T2"
+      ],
+      "reason": "Absence from exclusions is not affirmative account/work/payout acceptance."
+    },
+    "individual_account_allowed": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "T1"
+      ],
+      "reason": "Adult independent contractor subject to verification."
+    },
+    "agent_participation_allowed": {
+      "state": "HOLD",
+      "value": "default prohibited unless exact task expressly permits automation",
+      "evidence_refs": [
+        "T1"
+      ],
+      "reason": "No qualifying task exception located."
+    },
+    "automation_allowed": {
+      "state": "HOLD",
+      "value": "default prohibited unless exact task expressly permits automation",
+      "evidence_refs": [
+        "T1"
+      ],
+      "reason": "No qualifying task exception located."
+    },
+    "autonomous_submission_allowed": {
+      "state": "HOLD",
+      "value": "default prohibited unless exact task expressly permits automation",
+      "evidence_refs": [
+        "T1"
+      ],
+      "reason": "No qualifying task exception located."
+    },
+    "account_creation_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "exact_action_upfront_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "bid_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "claim_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "required_gas_cost": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "deposit_or_bond": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "subscription_required": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "KYC_requirement": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "terms_acceptance_requirement": {
+      "state": "PASS",
+      "value": true,
+      "evidence_refs": [
+        "T1"
+      ],
+      "reason": "Legal acceptance required before registration; not accepted this session."
+    },
+    "tax_or_invoice_requirement": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "supported_work_types": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "acceptance_mechanism": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "dispute_mechanism": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "payout_method": {
+      "state": "HOLD",
+      "value": "legacy Payoneer route; current applicability unverified",
+      "evidence_refs": [
+        "T3"
+      ],
+      "reason": "Legacy documentation not current bank evidence."
+    },
+    "minimum_payout": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "payout_fee": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "withdrawal_fee": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "supported_currencies": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "Turkey_payout_supported": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "bank_reachable": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "settlement_time": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "account_risk": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    }
+  },
+  "zero_capital_items": {
+    "signup": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "subscription": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "proposal_bid": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "claim": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "deposit": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "bond": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "gas": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "wallet_funding": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "paid_verification": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "paid_api": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    },
+    "mandatory_advertising": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": []
+    }
+  },
+  "shariah_state": "HOLD",
+  "p20": {
+    "state": "HOLD",
+    "reason": "No exact live opportunity selected; no economic optimization or production authorized.",
+    "checks": {
+      "real_value": "HOLD",
+      "clear_scope": "HOLD",
+      "clear_fee": "HOLD",
+      "no_riba": "HOLD",
+      "no_maysir": "HOLD",
+      "no_excessive_gharar": "HOLD",
+      "no_deception": "HOLD",
+      "ownership": "HOLD",
+      "payment_route": "HOLD"
+    }
+  },
+  "settlement_currency": null,
+  "fx": {
+    "state": "HOLD",
+    "conversion_performed": false,
+    "source": null,
+    "timestamp": null,
+    "conversion_fee": null
+  },
+  "human_threshold": [
+    {
+      "id": "toloka-terms",
+      "state": "PENDING_CONDITIONAL",
+      "action": "Human reviews and accepts binding terms only after qualification prerequisites pass.",
+      "reached_in_ui": false
+    },
+    {
+      "id": "toloka-identity-payout",
+      "state": "PENDING_CONDITIONAL",
+      "action": "Human completes any identity verification and approved payout linkage in provider interface when required.",
+      "reached_in_ui": false
+    }
+  ],
+  "evidence_refs": [
+    "T1",
+    "T2",
+    "T3"
+  ],
+  "onboarding_donecheck": "HOLD",
+  "economic_finality": "HOLD",
+  "next_action": "Identify a current task with explicit AI-agent permission before onboarding; verify current Turkey payout terms. Do not reuse legacy Payoneer figures as PASS.",
+  "zero_upfront": "HOLD",
+  "country_eligible": {
+    "state": "HOLD",
+    "value": "not on published excluded lists",
+    "evidence_refs": [
+      "T2"
+    ],
+    "reason": "Absence from exclusions is not affirmative account/work/payout acceptance."
+  },
+  "individual_allowed": {
+    "state": "PASS",
+    "value": true,
+    "evidence_refs": [
+      "T1"
+    ],
+    "reason": "Adult independent contractor subject to verification."
+  },
+  "agent_allowed": {
+    "state": "HOLD",
+    "value": "default prohibited unless exact task expressly permits automation",
+    "evidence_refs": [
+      "T1"
+    ],
+    "reason": "No qualifying task exception located."
+  },
+  "automation_allowed": {
+    "state": "HOLD",
+    "value": "default prohibited unless exact task expressly permits automation",
+    "evidence_refs": [
+      "T1"
+    ],
+    "reason": "No qualifying task exception located."
+  },
+  "autonomous_submission_allowed": {
+    "state": "HOLD",
+    "value": "default prohibited unless exact task expressly permits automation",
+    "evidence_refs": [
+      "T1"
+    ],
+    "reason": "No qualifying task exception located."
+  },
+  "bid_cost": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "claim_cost": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "gas_required": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "kyc_required": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "terms_required": {
+    "state": "PASS",
+    "value": true,
+    "evidence_refs": [
+      "T1"
+    ],
+    "reason": "Legal acceptance required before registration; not accepted this session."
+  },
+  "payout_route": {
+    "state": "HOLD",
+    "value": "legacy Payoneer route; current applicability unverified",
+    "evidence_refs": [
+      "T3"
+    ],
+    "reason": "Legacy documentation not current bank evidence."
+  },
+  "bank_reachable": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "minimum_payout": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "currencies": {
+    "state": "HOLD",
+    "value": null,
+    "evidence_refs": [],
+    "reason": "Not verified for an eligible account and exact live action in this bounded session."
+  },
+  "fees": {
+    "payout": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    },
+    "withdrawal": {
+      "state": "HOLD",
+      "value": null,
+      "evidence_refs": [],
+      "reason": "Not verified for an eligible account and exact live action in this bounded session."
+    }
+  },
+  "evidence_source": [
+    "https://mindrift.ai/legal/terms",
+    "https://toloka.ai/legal/eligibility-and-geographic-restrictions",
+    "https://github.com/Toloka/docs-tolokers/blob/main/en/common/pay/payoneer.md"
+  ]
+}

@@ -1,0 +1,130 @@
+[
+  {
+    "id": "S1",
+    "url": "https://superteam.fun/earn/agents",
+    "claim": "Official agent API permits agent discovery and submission only on AGENT_ALLOWED/AGENT_ONLY listings; human payout claim required.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "S2",
+    "url": "https://superteam.fun/earn/terms-of-use.pdf",
+    "claim": "Effective 2026-06-24. Fees discretionary; fiat/crypto by private agreement; third-party gas may apply. Individual eligibility conditional; taxes recipient responsibility.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "S3",
+    "url": "https://tr.superteam.fun/",
+    "claim": "Türkiye chapter directs local talent to Earn. This is regional availability evidence, not individual bank eligibility.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "S4",
+    "url": "https://superteam.fun/earn/agents/listings",
+    "claim": "Public agent listing shell accessible; extracted page contains no concrete live listing. Reward flow ends at verified wallet.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "C1",
+    "url": "https://contra.com/policies/terms",
+    "claim": "2026-04-09 terms allow adult independents; restrict nonprovided automated access; autonomous submission permission unverified. Identity and contracts apply.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "C2",
+    "url": "https://help.contra.com/en/articles/9322934-fees-overview",
+    "claim": "2026-08-06: Turkey TRY local transfer USD2; TRY conversion falls under other currencies 1%; platform fee free plan USD15/29. Exact incidence and timing must be checked.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "C3",
+    "url": "https://help.contra.com/en/articles/10008642-payouts",
+    "claim": "Standard Airwallex bank payout 4–7 business days; settlement and safety clearance separate.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "W1",
+    "url": "https://workplace.clickworker.com/en/agreements/10123",
+    "claim": "Free individual account setup §2.1; automation prohibited §4.7; third-party work restricted §4.6. Acceptance usually seven days; objection/ombudsman route.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "W2",
+    "url": "https://support-workplace.clickworker.com/support/solutions/articles/80000672350-what-payment-options-do-i-have-",
+    "claim": "2026-03-12: account-specific methods. Payoneer EUR/USD20 minimum; non-EU bank EUR20. Account route must be checked.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "W3",
+    "url": "https://support-workplace.clickworker.com/support/solutions/articles/80000671469-is-it-possible-to-work-for-clickworker-from-many-countries-all-over-the-world-",
+    "claim": "2026-03-13: registration may close per country; payment eligibility must be checked before working.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "F1",
+    "url": "https://www.freelancer.com/feesandcharges",
+    "claim": "Free signup and six initial monthly bids; bidding requires at least USD20 available balance. Applies to bid route, not a blanket assertion about contests.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "F2",
+    "url": "https://www.freelancer.com/about/terms",
+    "claim": "Minimum balance requirement; automated access requires express written permission; identity verification and withdrawal delays may apply.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "T1",
+    "url": "https://mindrift.ai/legal/terms",
+    "claim": "2026-07-01 Toloka platform terms: automation/AI agents prohibited unless task terms expressly permit; one account; verification and contractor obligations.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "T2",
+    "url": "https://toloka.ai/legal/eligibility-and-geographic-restrictions",
+    "claim": "2026-05-27: Turkey not in published excluded lists. This does not establish individual/project/payout eligibility.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "T3",
+    "url": "https://github.com/Toloka/docs-tolokers/blob/main/en/common/pay/payoneer.md",
+    "claim": "Legacy Payoneer documentation reports USD20 minimum and processor fees; current account applicability unverified, do not use as current payout PASS.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  },
+  {
+    "id": "R1",
+    "url": "https://github.com/engurulabory/autonomous-economic-core/blob/328caa38659b68e18a6fc0057121bb3b2535529e/docs/FIELD_RUN_001_LIVE_SCAN_2026-09-10.md",
+    "claim": "Prior field run HOLD retained. Superteam connector supports SUPERTEAM_AGENT_API_KEY; no verified account or bank proof recorded.",
+    "checked_at": "2026-09-10T09:13:00Z",
+    "kind": "official_document_or_canonical_repo",
+    "capture": "read via web or GitHub connector; paraphrase only"
+  }
+]
