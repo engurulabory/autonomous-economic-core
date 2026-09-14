@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# AEC local runtime state
+# Generated queue, logs, work artifacts and status/evidence are local operational state.
+# Canonical source truth stays in Git; runtime state stays outside version control.
+runtime/
