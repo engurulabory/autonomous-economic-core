@@ -5,6 +5,7 @@ from enum import Enum
 from typing import Any
 
 from aec.economic_execution import production_job_payload, qualify_candidate
+from aec.economic_learning_core import capability_by_id
 from aec.execution_pipeline import QualifiedExecutionRequest
 from aec.orchestrator import RevenueCandidate
 
@@ -63,9 +64,11 @@ def build_field_execution_bridge(
 ) -> FieldExecutionBridge:
     """Bridge PASS-qualified economic work into production, DoneCheck and submission handoff.
 
-    Internal production is allowed to proceed for a PASS-qualified candidate even when
-    the later external submission requires Human Threshold. Public submission, signing,
-    legal assent, KYC, payout changes and money movement are never authorized here.
+    The requested task capability describes the domain work (for example docs-fix
+    or research-mini). The runtime capability describes which executable worker
+    can carry the already-prepared deliverable through the controlled queue.
+    Current field production is intentionally routed through produce_artifact;
+    specialist synthesis/tool use remains a separate, explicit upstream adapter.
     """
     decision = qualify_candidate(candidate)
     if not decision.can_enqueue_internal_work:
@@ -74,19 +77,27 @@ def build_field_execution_bridge(
         raise ValueError("qualification_evidence_id is required")
     if not capability.strip():
         raise ValueError("capability is required")
+    task_capability = capability_by_id(capability)
+    if task_capability is None:
+        raise ValueError("capability is not present in the canonical AEC capability catalog")
+    if not task_capability.low_risk_digital or not task_capability.measurable_acceptance:
+        raise ValueError("capability is outside the current low-risk measurable field boundary")
     if not permitted_submission_route.strip():
         raise ValueError("permitted_submission_route is required")
 
     payload = production_job_payload(candidate, output_path=output_path, content=content)
+    payload["task_capability"] = capability
+    payload["task_category"] = task_capability.category
+    payload["specialist_synthesis_upstream"] = True
     if extra_payload:
         payload.update(extra_payload)
 
     internal = QualifiedExecutionRequest(
-        capability=capability,
+        capability="produce_artifact",
         payload=payload,
         qualification_state="QUALIFIED",
         qualification_evidence_id=qualification_evidence_id,
-        # Keep the internal production job runnable. Authority is enforced at the
+        # Keep internal materialization runnable. Authority is enforced at the
         # external handoff envelope below, not by blocking production itself.
         human_threshold_required=False,
     )
