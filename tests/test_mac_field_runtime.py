@@ -16,6 +16,19 @@ SPEC.loader.exec_module(MODULE)
 
 
 class MacFieldRuntimeTests(unittest.TestCase):
+    def test_run_python_includes_repository_root_in_pythonpath(self):
+        completed = type(
+            "Completed",
+            (),
+            {"returncode": 0, "stdout": "", "stderr": ""},
+        )()
+        with patch.object(MODULE.subprocess, "run", return_value=completed) as run:
+            result = MODULE.run_python(MODULE.FIELD_CYCLE)
+        self.assertEqual(result["returncode"], 0)
+        env = run.call_args.kwargs["env"]
+        self.assertIn(str(MODULE.REPO_ROOT), env["PYTHONPATH"].split(MODULE.os.pathsep))
+        self.assertEqual(run.call_args.kwargs["cwd"], MODULE.REPO_ROOT)
+
     def test_repository_truth_requires_main_and_clean_before_cycles(self):
         with tempfile.TemporaryDirectory() as tmp:
             status = Path(tmp) / "status.json"
