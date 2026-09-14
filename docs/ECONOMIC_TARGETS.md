@@ -37,6 +37,23 @@ This demonstrates practical economic usefulness under real operating conditions.
 
 This is the first serious performance target; it is not assumed in advance.
 
+
+
+## Locked Operating Focus — Sustainable $5/day VBNV
+
+**Primary operating objective:** First produce **$5/day sustainable Verified Banked Net Value™**, then scale only the revenue line that has already produced verified banked value.
+
+This operating objective does not replace The One Cent Test™. It sits above it:
+
+`€0.01 VBNV proof → $1/day → $5/day sustainable VBNV → scale only verified line`
+
+Rules:
+- $5/day is a sustained operating target, not a guaranteed revenue claim.
+- Scaling permission follows observed banked evidence, not worker count.
+- 600 worker slots remain capacity only.
+- A revenue line that has not produced verified banked value does not receive scale authority.
+- Earned or settled value may be recorded daily while bank payout arrives later; VBNV is recognized only on verified bank/approved-account receipt and reconciliation.
+
 ## Banked truth
 Long-term primary KPI:
 
