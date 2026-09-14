@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import os
 import subprocess
 import sys
 from datetime import datetime, timezone
@@ -35,9 +36,17 @@ def repository_truth() -> dict[str, Any]:
 
 def run_python(script: Path) -> dict[str, Any]:
     started = datetime.now(timezone.utc).isoformat()
+    env = os.environ.copy()
+    existing_pythonpath = env.get("PYTHONPATH", "")
+    env["PYTHONPATH"] = (
+        str(REPO_ROOT)
+        if not existing_pythonpath
+        else f"{REPO_ROOT}{os.pathsep}{existing_pythonpath}"
+    )
     result = subprocess.run(
         [sys.executable, str(script)],
         cwd=REPO_ROOT,
+        env=env,
         capture_output=True,
         text=True,
         timeout=300,
