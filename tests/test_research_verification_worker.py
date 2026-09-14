@@ -5,6 +5,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
+from aec.execution_workers import QADoneCheckWorker
 from aec.research_verification_worker import ResearchSource, ResearchVerificationWorker
 from aec.worker_runtime import JobState, SQLiteJobQueue, run_worker_once
 
@@ -65,6 +66,19 @@ class ResearchVerificationWorkerTests(unittest.TestCase):
         evidence = self.queue.events(job.job_id)[-1].detail["evidence"]
         self.assertEqual(evidence["successful_sources"], 2)
         self.assertEqual(evidence["unverified_terms"], [])
+
+        self.queue.enqueue(
+            "verify_artifact",
+            {
+                "artifact_path": evidence["artifact_path"],
+                "sha256": evidence["sha256"],
+                "contains": ["AEC_RESEARCH_VERIFICATION_V1", "Alpha", "10 EUR"],
+                "forbidden": ["SECRET"],
+                "min_bytes": 50,
+            },
+        )
+        donecheck = run_worker_once(self.queue, QADoneCheckWorker())
+        self.assertEqual(donecheck.state, JobState.COMPLETED)
 
     def test_unverified_term_holds_fail_closed(self):
         self.queue.enqueue(
